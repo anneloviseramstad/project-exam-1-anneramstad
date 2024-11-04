@@ -1,0 +1,29 @@
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: var(--section-margin);
+  padding: 0 100px;
+}
+
+.register-form input {
+  padding: 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.register-form label {
+  font-weight: 600;
+  font-family: var(--heading-font-family-secondary);
+  color: #3c3c3c;
+}
+
+.btn-register {
+  color: var(--secondary-color);
+  background: linear-gradient(90deg, #81484d 0%, rgba(124, 38, 64, 0.6) 100%);
+  padding: 10px 130px;
+  align-self: center;
+  border-radius: 20px;
+  margin: var(--section-margin);
+}

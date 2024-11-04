@@ -1,0 +1,15 @@
+.blog-title {
+  text-align: left;
+}
+
+.post-info {
+  display: flex;
+  justify-content: space-between;
+  margin: var(--element-margin-bottom);
+}
+
+.post-img {
+  height: 60vh;
+  width: 100%;
+  object-fit: cover;
+}

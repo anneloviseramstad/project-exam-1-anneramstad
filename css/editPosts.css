@@ -1,0 +1,39 @@
+.btn-save {
+  background-color: var(--secondary-color);
+  border: 1px solid #d9d9d9;
+  color: var(--text-color);
+  padding: 12px 130px;
+}
+
+.btn-delete {
+  background-color: rgb(218, 0, 0);
+  padding: 12px 130px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 58px;
+  margin: var(--section-margin);
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: var(--section-margin);
+  padding: 0 100px;
+}
+
+.edit-form input {
+  padding: 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.edit-form label {
+  font-weight: 600;
+  font-family: var(--heading-font-family-secondary);
+  color: #3c3c3c;
+}
