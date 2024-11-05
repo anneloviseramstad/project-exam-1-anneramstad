@@ -44,13 +44,13 @@
   </head>
   <body>
     <header>
-      <nav class="navbar">
-        <div class="logo">
-          <img src="images/logo.svg" alt="logo" /><a href="index.html"
-            >Culinary Creations</a
-          >
-        </div>
-        <ul>
+      <div class="logo">
+        <a href="index.html">Culinary Creations</a>
+      </div>
+      <nav class="navigation">
+        <input type="checkbox" class="toggle-menu" />
+        <div class="hamburger"></div>
+        <ul class="menu">
           <li><a href="post/index.html">RECIPES</a></li>
           <li><a href="post/about.html">ABOUT</a></li>
           <li><a href="account/login.html">ACCOUNT</a></li>
@@ -62,18 +62,19 @@
         <div class="carousel-slide">
           <div class="carousel-card">
             <img
-              src="images/jannis-brandt-mmsQUgMLqUo-unsplash.jpg"
+              src="images/michele-blackwell-rAyCBQTH7ws-unsplash.jpg"
               alt=""
               class="carousel-image"
             />
             <div class="carousel-caption">
               <h1>Caption Title</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <h4>Blog post publish date and author</h4>
+              <p>Blog post description.</p>
             </div>
           </div>
           <div class="carousel-card">
             <img
-              src="images/dillon-kydd-FWsuD5jGBMo-unsplash.jpg"
+              src="images/michele-blackwell-rAyCBQTH7ws-unsplash.jpg"
               alt=""
               class="carousel-image"
             />
@@ -285,7 +286,7 @@
             </p>
             <button>GET TO KNOW ME MORE</button>
           </div>
-          <div>
+          <div class="founder-image">
             <img
               src="images/courtney-cook-le7D9QFiPr8-unsplash.jpg"
               alt="Woman with
@@ -294,13 +295,14 @@
           </div>
         </div>
       </div>
-      <div class="container recipes">
-        <div class="grid-item">
+      <div class="container highlight-grid">
+        <div class="highlight-item">
           <img
             src="images/dillon-kydd-FWsuD5jGBMo-unsplash.jpg"
             alt="Pasta carbonara with bacon and salad"
+            class="grid-image"
           />
-          <div class="grid-item--text">
+          <div class="highlight-item--text">
             <p>Recently Added</p>
             <h3>Classic Carbonara</h3>
             <p>40 min - Easy</p>
@@ -311,12 +313,13 @@
             <button class="btn-read--more">READ MORE..</button>
           </div>
         </div>
-        <div class="grid-item">
+        <div class="highlight-item">
           <img
             src="images/dillon-kydd-FWsuD5jGBMo-unsplash.jpg"
             alt="Pasta carbonara with bacon and salad"
+            class="grid-image"
           />
-          <div class="grid-item--text">
+          <div class="highlight-item--text">
             <p>Recently Added</p>
             <h3>Classic Carbonara</h3>
             <p>40 min - Easy</p>
@@ -344,6 +347,7 @@
           <h4>QUICK LINKS</h4>
           <ul>
             <li>Recipies</li>
+            <li>About</li>
             <li>Account</li>
             <li>Privacy Policy</li>
             <li>Terms & Conditions</li>
