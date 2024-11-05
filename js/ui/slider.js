@@ -1,31 +1,18 @@
-let slideIndex = 1;
-showSlides(slideIndex);
+let currentSlide = 0;
 
-function plusSlides(n) {
-  showSlides((slideIndex += n));
-}
+function moveSlide(direction) {
+  const slides = document.querySelectorAll(".carousel-card");
+  const totalSlides = slides.length;
 
-function currentSlide(n) {
-  showSlides((slideIndex = n));
-}
+  currentSlide += direction;
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("carousel-item");
-  let dots = document.getElementsByClassName("dot");
+  if (currentSlide < 0) {
+    currentSlide = totalSlides - 1;
+  } else if (currentSlide >= totalSlides) {
+    currentSlide = 0;
+  }
 
-  if (n > slides.length) {
-    slideIndex = 1;
-  }
-  if (n < 1) {
-    slideIndex = slides.length;
-  }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
+  document.querySelector(".carousel-slide").style.transform = `translateX(-${
+    currentSlide * 100
+  }%)`;
 }
