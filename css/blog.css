@@ -1,0 +1,71 @@
+/* Post Carousel */
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0;
+  padding: 20px;
+}
+
+.btn-left,
+.btn-right {
+  margin: 20px;
+  background-color: #878787;
+  border: none;
+  border-radius: 50%;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.carousel-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 900px;
+  position: relative;
+  margin: 20px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.carousel-image-container {
+  position: relative;
+}
+
+.carousel-image {
+  border-radius: 8px;
+  display: block;
+}
+
+#carousel-title {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.763);
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: var(--text-color);
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  font-weight: 400;
+}
+
+/* Post Carousel Media Queries */
+
+@media (max-width: 1024px) {
+  .carousel-caption {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-image {
+    padding-left: 16px;
+  }
+}

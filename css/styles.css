@@ -3,6 +3,7 @@
 @import url("editPosts.css");
 @import url("login.css");
 @import url("register.css");
+@import url("blog.css");
 
 * {
   margin: 0;
@@ -12,30 +13,23 @@
 
 :root {
   /* Color Variables */
-  --primary-color: #81484d;
-  --secondary-color: #ffffff;
-  --background-color: #e3aca4;
-  --text-color: #1f1f1f;
-  --heading-color-primary: #1f1f1f;
-  --heading-color-secondary: #f18f01;
-  --heading-color-tertiary: #2f4f4f;
-  --link-color: #81484d;
+  --primary-color: #727c62;
+  --secondary-color: #d9dcd6;
+  --tetriary-color: #ba623c;
+  --button-color: #9fa786;
+  --text-color-primary: #1f1f1f;
+  --text-color-secondary: #ffffff;
+  --text-color-tetriary: #000000;
 
   /* Font Variables */
-  --font-family: "Lato", sans-serif;
-  --heading-font-family-primary: "Poppins", sans-serif;
-  --heading-font-family-secondary: "Roboto", sans-serif;
+
+  --font-family: "Roboto Serif", sans-serif;
+  --font-family-secondary: "Poppins", sans-serif;
+  --logo-font-family: "Abril Fatface", sans-serif;
   --base-font-size: 1em;
-  --heading-font-weight: medium;
 
   /* Spacing Variables */
-  --container-padding: 20px;
-  --button-padding: 10px 15px;
   --section-margin: 40px;
-  --element-margin-bottom: 1em 0;
-
-  /* Border radius for buttons or cards */
-  --border-raduis: 8px;
 
   /* Breakpoint Variables */
   --breakpoint-small: 640px;
@@ -50,32 +44,41 @@
 main {
   font-family: var(--font-family);
   font-size: var(--base-font-size);
-  color: var(--text-color);
-  max-width: 1280px;
+  color: var(--text-color-primary);
   align-items: center;
   margin: auto;
 }
 
-h1 {
-  font-family: var(--heading-font-family-primary);
-  font-weight: var(--heading-font-weight);
-  color: var(--heading-color-primary);
-  font-size: 36px;
-  text-align: center;
+.logo a {
+  font-family: var(--logo-font-family);
+  font-size: 2.5em;
+  color: var(--text-color-tetriary);
 }
 
+h1,
 h2 {
-  color: var(--heading-color-primary);
-  font-family: var(--heading-font-family-secondary);
-  font-size: 24px;
-  margin: var(--element-margin-bottom);
+  font-family: var(--font-family-tetriary);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 2em;
+  color: var(--text-color-primary);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  margin: var(--section-margin);
 }
 
 h3 {
-  color: var(--text-color);
-  font-family: var(--heading-font-family-primary);
-  font-size: 24px;
-  font-weight: 400;
+  font-family: var(--heading-font-family-secondary);
+  font-size: 1em;
+  font-weight: 600;
+}
+
+p {
+  font-family: var(--font-family);
+}
+
+strong {
+  font-weight: 600;
 }
 
 ul {
@@ -84,106 +87,98 @@ ul {
 
 li,
 a {
-  color: var(--link-color);
-  font-family: var(--heading-font-family-primary);
+  font-family: var(--font-family-secondary);
+  font-weight: 400;
+  color: var(--text-color-primary);
   text-decoration: none;
-  font-weight: 500;
-  font-size: 24px;
+  font-size: 1em;
   list-style-type: none;
 }
 
 a:hover {
-  text-decoration: underline;
+  border-bottom: 5px solid var(--tetriary-color);
 }
 
-h5 {
-  text-align: center;
-  margin: var(--element-margin-bottom);
-}
-
+header img,
 main img {
   width: 100%;
   height: auto;
 }
 
-.container {
-  margin: var(--section-margin);
-}
-
-@media (max-width: 1024px) {
-  .container {
-    margin: 16px;
-  }
-}
-
 button {
-  padding: 16px 64px;
-  border-radius: var(--border-raduis);
+  font-family: var(--font-family-secondary);
+  font-weight: 600;
+  font-size: 1.25em;
+  background-color: var(--button-color);
+  color: var(--text-color-secondary);
+  padding: 8px 100px;
   border: none;
+}
+
+.newsletter-banner {
   background-color: var(--primary-color);
-  color: var(--secondary-color);
-  font-family: var(--heading-font-family-secondary);
-  font-weight: var(--heading-font-weight);
-  font-size: 20px;
+  color: var(--text-color-secondary);
+}
+
+.newsletter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 140px;
+  padding: 2em;
+}
+
+.newsletter p {
+  font-family: var(--font-family);
+  font-size: 1.5em;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.newsletter-form input {
+  padding: 12px;
+}
+
+/* Top Banner */
+
+.top-banner {
+  background-color: var(--secondary-color);
+}
+
+.top-banner--inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85em;
+  font-family: var(--font-family-secondary);
+  padding: 0.5em 2.5em;
 }
 
 /* Navigation Bar */
 
-header {
-  position: relative;
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  width: 100%;
+.nav-banner {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 20px 50px;
-  transition: 0.3s;
-}
-
-.logo a {
-  display: block;
-}
-
-.navigation {
-  display: flex;
   justify-content: space-between;
-  align-items: center;
+  max-width: 1280px;
+  margin: auto;
+  padding: 1em 2.5em;
 }
 
 .menu {
   display: flex;
-  justify-content: center;
-  flex-direction: row;
-  align-items: center;
-  z-index: 1;
-  transition: 0.5s;
-  padding-left: 30px;
-  gap: 20px;
-}
-
-.menu li a:hover {
-  box-shadow: 0 -5px 0px #ffffff inset,
-    500px 0 0 rgba(255, 255, 255, 0.03) inset;
-  padding: 15px 20px 25px 20px;
-}
-
-.navigation li a {
-  color: var(--secondary-color);
-  font-size: 20px;
-}
-
-.logo a {
-  font-family: "Shantell Sans", cursive;
-  font-size: 32px;
-  color: var(--secondary-color);
+  gap: 2em;
 }
 
 .hamburger {
   position: relative;
   width: 30px;
   height: 4px;
-  background: #ffffff;
+  background: var(--text-color-tetriary);
   border-radius: 10px;
   cursor: pointer;
   z-index: 2;
@@ -196,7 +191,7 @@ header {
   position: absolute;
   height: 4px;
   right: 0;
-  background: #ffffff;
+  background: var(--text-color-tetriary);
   border-radius: 10px;
   transition: 0.3s;
 }
@@ -263,10 +258,10 @@ header {
     position: fixed;
     top: 0;
     right: -400px;
-    background: var(--primary-color);
+    background: var(--secondary-color);
     width: 300px;
     height: 100%;
-    padding-top: 100px;
+    padding-top: 150px;
     margin: 0;
   }
   .menu li {
@@ -286,68 +281,32 @@ header {
 /* Footer */
 
 footer {
-  display: block;
-  font-family: var(--font-family);
-}
-
-#newsletter {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  padding: 80px;
-  text-align: center;
-}
-
-#newsletter h3,
-#newsletter p {
-  font-size: 24px;
-  color: var(--secondary-color);
-}
-
-#newsletter form input {
-  border: none;
-  border-radius: 8px;
-  padding: 8px 16px;
-  font-size: 16px;
-  margin: 8px;
-}
-
-.btn-subscribe {
   background-color: var(--secondary-color);
-  color: var(--primary-color);
-  border: none;
-  border-radius: 8px;
-  padding: 8px 16px;
-  font-family: var(--heading-font-family-primary);
-  font-size: 16px;
-  font-weight: 600;
-  margin: 8px;
-  cursor: pointer;
+  text-align: center;
+  line-height: 3em;
+  padding-top: 2.5em;
+  padding-bottom: 1em;
 }
 
-#footer-links {
+.footer-links ul {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 1.5em;
+}
+
+/* Hero */
+
+.hero-image--grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2em;
   margin: var(--section-margin);
-  max-width: 1440px;
-  margin: auto;
-  padding: 20px;
+  max-width: 1280px;
+  justify-self: center;
 }
 
-#footer-links h4,
-#footer-links ul li {
-  color: var(--primary-color);
-  list-style: none;
-  font-size: 16px;
-}
-
-#footer-links h4 {
-  margin: var(--element-margin-bottom);
-}
-
-/* Footer Media Queries */
-@media (max-width: 640px) {
-  #footer-links {
-    display: block;
-    text-align: center;
-  }
+.hero-image--grid img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
 }
