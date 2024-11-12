@@ -41,59 +41,70 @@
   </head>
   <body>
     <header>
-      <div class="logo">
-        <a href="index.html">Culinary Creations</a>
+      <div class="top-banner">
+        <div class="top-banner--inner">
+          <p>
+            <strong>FOOD FOR THOUGHT:</strong>
+
+            How does food shape our memories? This month, I’m reflecting on the
+            role of family recipes in preserving our heritage.
+          </p>
+
+          <strong>CLICK HERE for more details.</strong>
+        </div>
       </div>
-      <nav class="navigation">
-        <input type="checkbox" class="toggle-menu" />
-        <div class="hamburger"></div>
-        <ul class="menu">
-          <li><a href="post/index.html">RECIPES</a></li>
-          <li><a href="post/about.html">ABOUT</a></li>
-          <li><a href="account/login.html">ACCOUNT</a></li>
-        </ul>
-      </nav>
+      <div class="nav-banner">
+        <div class="logo">
+          <a href="/home/index.html">culinary creations</a>
+        </div>
+        <nav class="navigation">
+          <input type="checkbox" class="toggle-menu" />
+          <div class="hamburger"></div>
+          <ul class="menu">
+            <li><a href="/home/index.html">HOMEPAGE</a></li>
+            <li><a href="/about/index.html">ABOUT</a></li>
+            <li><a href="/index.html">BLOG</a></li>
+            <li><a href="/account/login.html">LOG IN</a></li>
+            <li><a href="/account/register.html">REGISTER</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main>
-      <h1>Sign In</h1>
-      <form class="login-form">
-        <label for="text">Username:</label>
-        <input type="text" placeholder="Enter Username" />
-        <label for="password">Password:</label>
-        <input type="password" placeholder="Enter Password" />
-        <button class="btn-login">Sign In</button>
-      </form>
-    </main>
-    <footer>
-      <div id="newsletter">
-        <h3>NEWSLETTER</h3>
-        <p>Sign up to our newsletter to get special offers!</p>
-        <form>
-          <input type="text" placeholder="Email Address" />
-          <button class="btn-subscribe">SUBSCRIBE</button>
+      <div class="h1-secondary">
+        <h1>Sign In</h1>
+      </div>
+      <div class="account-container">
+        <form class="login-form" id="loginForm">
+          <p class="form-title">Sign In Here</p>
+          <label for="text">Username:</label>
+          <input type="text" placeholder="Enter Username" />
+          <label for="password">Password:</label>
+          <input type="password" placeholder="Enter Password" />
+          <button class="btn-login">Sign In</button>
         </form>
       </div>
-      <div id="footer-links" class="container">
-        <img src="../images/logo.svg" alt="logo" />
-        <div>
-          <h4>QUICK LINKS</h4>
-          <ul>
-            <li>Recipies</li>
-            <li>Account</li>
-            <li>Privacy Policy</li>
-            <li>Terms & Conditions</li>
-          </ul>
-        </div>
-        <div>
-          <h4>FOLLOW US</h4>
-          <ul>
-            <li>Facebook</li>
-            <li>Instagram</li>
-            <li>Pinterest</li>
-          </ul>
-        </div>
+    </main>
+    <footer>
+      <div class="logo">
+        <a href="/home/index.html">culinary creations</a>
       </div>
-      <h5>2024 Culinary Creations. All Rights Reserved.</h5>
+      <p>Follow Us at</p>
+      <div class="social-media--icons">
+        <img src="/assets/Facebook-icon.png" alt="Facebook icon" />
+        <img src="/assets/instagram-icon.png" alt="Instagram icon" />
+        <img src="/assets/Youtube-icon.png" alt="Twitter icon" />
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="/home/index.html">Homepage</a></li>
+          <li><a href="/about/index.html">About</a></li>
+          <li><a href="/index.html">Blog</a></li>
+          <li><a href="/legal/terms.html">Terms & Conditions</a></li>
+          <li><a href="/legal/privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <strong>2024 Culinary Creations. All Rights Reserved.</strong>
     </footer>
   </body>
 </html>

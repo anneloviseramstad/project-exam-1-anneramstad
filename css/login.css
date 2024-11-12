@@ -1,0 +1,29 @@
+.account-container {
+  margin: var(--section-margin);
+  padding: 2em;
+}
+
+.login-form,
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 1280px;
+  justify-self: center;
+  background-color: var(--primary-color);
+  padding: 4em 2em;
+  color: var(--text-color-secondary);
+  font-family: var(--font-family-secondary);
+}
+
+.login-form input,
+.register-form input {
+  padding: 0.5em;
+  font-family: var(--font-family-secondary);
+}
+
+.form-title {
+  text-align: center;
+  font-size: 1.5em;
+  padding-bottom: 1em;
+}

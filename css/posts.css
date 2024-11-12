@@ -1,0 +1,12 @@
+.blog-post--container {
+  margin: var(--section-margin);
+}
+
+.blog-post--info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.blog-post--text {
+  text-align: center;
+}

@@ -37,27 +37,3 @@
   object-fit: cover;
 }
 
-.welcome-banner {
-  background-color: var(--tetriary-color);
-  margin-bottom: var(--section-margin);
-}
-
-.welcome-banner--inner {
-  padding: var(--section-margin);
-  display: flex;
-  max-width: 1000px;
-  justify-self: center;
-  align-items: center;
-  gap: 20px;
-}
-
-.welcome-text h2,
-.welcome-text p {
-  color: var(--text-color-secondary);
-  text-align: left;
-  margin: 16px 0;
-}
-
-.welcome-image img {
-  clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
-}

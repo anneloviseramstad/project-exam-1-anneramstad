@@ -22,7 +22,6 @@
   --text-color-tetriary: #000000;
 
   /* Font Variables */
-
   --font-family: "Roboto Serif", sans-serif;
   --font-family-secondary: "Poppins", sans-serif;
   --logo-font-family: "Abril Fatface", sans-serif;
@@ -56,7 +55,8 @@ main {
 }
 
 h1,
-h2 {
+h2,
+.hero-slogan {
   font-family: var(--font-family-tetriary);
   font-style: italic;
   font-weight: 400;
@@ -67,8 +67,18 @@ h2 {
   margin: var(--section-margin);
 }
 
+.h1-secondary {
+  background-color: var(--secondary-color);
+  padding: 0.2em;
+  margin-top: var(--section-margin);
+}
+
+.hero-slogan {
+  font-size: 1.5em;
+}
+
 h3 {
-  font-family: var(--heading-font-family-secondary);
+  font-family: var(--font-family);
   font-size: 1em;
   font-weight: 600;
 }
@@ -276,6 +286,34 @@ button {
     font-size: 20px;
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
   }
+}
+
+/* Welcome Banner */
+
+.welcome-banner {
+  background-color: var(--tetriary-color);
+  margin-bottom: var(--section-margin);
+  margin-top: var(--section-margin);
+}
+
+.welcome-banner--inner {
+  padding: var(--section-margin);
+  display: flex;
+  max-width: 1000px;
+  justify-self: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.welcome-text h2,
+.welcome-text p {
+  color: var(--text-color-secondary);
+  text-align: left;
+  margin: 16px 0;
+}
+
+.welcome-image img {
+  clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
 }
 
 /* Footer */

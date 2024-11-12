@@ -11,11 +11,11 @@
 
 .btn-left,
 .btn-right {
-  margin: 20px;
+  margin: 12px;
   background-color: #878787;
   border: none;
-  border-radius: 50%;
-  padding: 20px;
+  border-radius: 20%;
+  padding: 8px 16px;
   cursor: pointer;
 }
 
@@ -43,14 +43,13 @@
 #carousel-title {
   position: absolute;
   bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 42%;
+  transform: translateX(-42%);
   background-color: rgba(255, 255, 255, 0.763);
   padding: 10px 20px;
   border-radius: 8px;
   color: var(--text-color);
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 18px;
   text-align: center;
   font-weight: 400;
 }

@@ -1,16 +1,21 @@
-const baseUrl = "https://v2.api.noroff.dev/";
+// Base URL for the API
 
-export const registerUrl = `${baseUrl}auth/register`;
-export const loginUrl = `${baseUrl}auth/login`;
+const API_BASE_URL = "https://v2.api.noroff.dev/";
+const BLOG_NAME = "culinaryCreations";
 
-const registerUsername = "sweetBites";
-export const allBlogPosts = `${baseUrl}/blog/posts/${registerUsername}`;
+// Authentication endpoints
 
-export const getBlogPostsById = (postId) =>
-  `${baseUrl}/blog/posts/${registerUsername}/${postId}`;
+export const API_REGISTER_ENDPOINT = `${API_BASE_URL}auth/register`;
+export const API_LOGIN_ENDPOINT = `${API_BASE_URL}auth/login`;
 
+// Blog post endpoints
 
-export const editBlogPostById = (postId) =>
-  `${baseUrl}/blog/posts/${registerUsername}/${postId}`
+const BLOG_POSTS_BASE_URL = `${API_BASE_URL}/blog/posts/${BLOG_NAME}`;
 
-export const deleteBlogPostById = (postId) =>
+export const API_GET_ALL_BLOG_POSTS = `${BLOG_POSTS_BASE_URL}`;
+export const API_GET_BLOG_POST_BY_ID = (postId) =>
+  `${BLOG_POSTS_BASE_URL}/${postId}`;
+export const API_UPDATE_BLOG_POST_BY_ID = (postId) =>
+  `${BLOG_POSTS_BASE_URL}/${postId}`;
+export const API_DELETE_BLOG_POST_BY_ID = (postId) =>
+  `${BLOG_POSTS_BASE_URL}/${postId}`;

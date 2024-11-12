@@ -21,8 +21,13 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward"
     />
 
+    <script
+      src="https://kit.fontawesome.com/702cf43524.js"
+      crossorigin="anonymous"
+    ></script>
+
     <!-- Scripts-->
-    <script src="js/ui/slider.js" defer></script>
+    <script src="js/script.js" defer></script>
   </head>
 
   <body>
@@ -41,7 +46,7 @@
       </div>
       <div class="nav-banner">
         <div class="logo">
-          <a href="index.html">culinary creations</a>
+          <a href="/home/index.html">culinary creations</a>
         </div>
         <nav class="navigation">
           <input type="checkbox" class="toggle-menu" />
@@ -55,7 +60,9 @@
           </ul>
         </nav>
       </div>
-      <div class="hero">
+    </header>
+    <main>
+      <section class="hero">
         <div class="hero-image--grid">
           <img
             src="images/dominik-martin-JYFmYif4n70-unsplash.jpg"
@@ -74,10 +81,8 @@
             alt="Hero image"
           />
         </div>
-        <h1>Exploring the Heart and Soul of Food.</h1>
-      </div>
-    </header>
-    <main>
+        <p class="hero-slogan">Exploring the Heart and Soul of Food.</p>
+      </section>
       <div class="newsletter-banner">
         <div class="newsletter">
           <p>Join the Journey – Food Stories, Right to Your Inbox.</p>
@@ -87,99 +92,31 @@
           </form>
         </div>
       </div>
-      <div class="main-content--container">
-        <div class="main-content main-about">
-          <div class="main-content--text">
-            <h3>About</h3>
-            <h2>What Culinary Creations is All About</h2>
-            <p>
-              <strong
-                >I believe food is more than just what’s on your plate—it’s a
-                window into culture, tradition, and connection.</strong
-              >
-              Through my blog, I aim to share the stories behind the meals we
-              cherish, the spices that shape our dishes, and the rituals that
-              bring us together around the table.
-            </p>
-            <p>
-              <strong>My goal</strong> is to inspire you to see food as a
-              celebration, whether you're exploring new ingredients, embracing
-              old family recipes, or discovering culinary traditions from around
-              the world.
-            </p>
-            <p>
-              This blog is a <strong>space for food lovers,</strong> curious
-              cooks, and anyone who appreciates the deep connection between food
-              and life. Join me as we explore everything from everyday meals to
-              the rich history and culture behind each dish.
-            </p>
-            <p>
-              Let’s explore, create, and connect through food—one story at a
-              time.
-            </p>
-          </div>
-          <div class="main-content--image">
+
+      <div id="loader" class="hidden"></div>
+      <div class="h1-secondary">
+        <h1>Blog Posts</h1>
+      </div>
+      <div class="carousel">
+        <button class="btn-left" aria-label="Previous">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <div class="carousel-post">
+          <div class="carousel-image-container">
             <img
-              src="images/don-ricardo-h4axblGzDVQ-unsplash.jpg"
-              alt="Fruits on a plate"
+              class="carousel-image"
+              src="/images/annie-spratt-R3LcfTvcGWY-unsplash.jpg"
+              alt="Blog post image"
             />
+            <h2 id="carousel-title">
+              A beautifully styled dessert captures the essence of simplicity
+              and elegance.
+            </h2>
           </div>
         </div>
-        <div class="main-content--background">
-          <div class="main-presentation">
-            <div class="main-content--text">
-              <h3>Presentation</h3>
-              <h2>Food Presentation: "We Eat with Our Eyes First"</h2>
-              <p>
-                <strong>Food is an art form,</strong> and presentation is just
-                as important as taste. How we place food on the plate can
-                transform an ordinary meal into something extraordinary.
-              </p>
-              <p>
-                In this blog, I share tips, inspiration, and reflections on the
-                art of food decoration—how
-                <strong>colors, textures, and details</strong> can awaken the
-                senses and enhance the dining experience.
-              </p>
-              <p>
-                My goal is to inspire you to see food in a new light and turn
-                every meal into a visual and flavorful delight.
-              </p>
-            </div>
-            <div class="main-content--image">
-              <img
-                src="images/zoe-RXawktAITV4-unsplash.jpg"
-                alt="Red cake being decorated with flowers"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="main-content main-culture">
-          <div class="main-content--text">
-            <h3>Culture</h3>
-            <h2>Food & Culture: Traditions That Brings Us Together</h2>
-            <p>
-              Food is more than just sustenance
-              <strong
-                >—it’s a vital part of our traditions and cultures.</strong
-              >
-            </p>
-            <p>
-              On this blog, I explore stories about how food plays a unique role
-              in different societies around the world. Whether through family
-              recipes passed down through generations or the special culinary
-              customs celebrated during holidays, I want to highlight the
-              <strong>rich traditions that connect us through food.</strong>
-            </p>
-            <p>
-              At Culinary Creations, I’m passionate about how food creates
-              community, memorable moments, and opens doors to new experiences.
-            </p>
-          </div>
-          <div class="main-content--image">
-            <img src="images/dibakar-roy-kmixrZWPzOo-unsplash.jpg" alt="" />
-          </div>
-        </div>
+        <button class="btn-right" aria-label="Next">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
       </div>
       <div class="welcome-banner">
         <div class="welcome-banner--inner">
@@ -214,9 +151,9 @@
       </div>
       <p>Follow Us at</p>
       <div class="social-media--icons">
-        <img src="images/Facebook-icon.png" alt="Facebook icon" />
-        <img src="images/instagram-icon.png" alt="Instagram icon" />
-        <img src="images/Youtube-icon.png" alt="Twitter icon" />
+        <img src="assets/Facebook-icon.png" alt="Facebook icon" />
+        <img src="assets/Instagram-icon.png" alt="Instagram icon" />
+        <img src="assets/Youtube-icon.png" alt="Youtube icon" />
       </div>
       <div class="footer-links">
         <ul>
@@ -227,7 +164,7 @@
           <li><a href="#">Privacy Policy</a></li>
         </ul>
       </div>
-      <p>2024 Culinary Creations. All Rights Reserved.</p>
+      <strong>2024 Culinary Creations. All Rights Reserved.</strong>
     </footer>
   </body>
 </html>
