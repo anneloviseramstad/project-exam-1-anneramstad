@@ -1,3 +1,5 @@
+import { API_BASE_URL } from "./api.js";
+
 document
   .getElementById("registerForm")
   .addEventListener("submit", function (e) {
@@ -9,7 +11,7 @@ document
       password: document.getElementById("password").value,
     };
 
-    fetch("/api/auth/register", {
+    fetch("/{API_URL}/api/auth/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -18,9 +20,20 @@ document
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("User registered:", data);
+        if (data.success) {
+          messageDiv.textContent = "Registration successful!";
+          messageDiv.style.color = "green";
+          document.getElementById("registerForm").reset();
+        } else {
+          messageDiv.textContent =
+            "Registration failed: " + (data.message || "Inknown Error");
+          messageDiv.style.color = "red";
+        }
       })
       .catch((error) => {
         console.error("Error:", error);
+        messageDiv.textContent =
+          "An error occurred during registration. Please try again.";
+        messageDiv.style.color = "red";
       });
   });
