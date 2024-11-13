@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page | Culinary Creations</title>
 
-    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
 
     <!-- Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,7 +40,8 @@
     />
 
     <!-- Scripts -->
-    <script src="/js/auth/register.js" defer></script>
+    <script src="/js/auth/auth.js" defer></script>
+    <script src="/js/constants/api.js" defer></script>
   </head>
   <body>
     <header>
@@ -83,22 +84,22 @@
           <label for="username">Username:</label>
           <input
             type="text"
-            id="username"
+            id="username-input"
             name="username"
             placeholder="Enter Name"
           />
           <label for="email">Email Address:</label>
           <input
             type="email"
-            id="email"
+            id="email-input"
             name="email"
             placeholder="Enter Email Address"
           />
           <label for="password">Password:</label>
           <input
-            type="password"
-            id="password"
-            name="password"
+            type="current-password"
+            id="password-input"
+            name="current-password"
             placeholder="Enter Password"
           />
           <button type="submit" class="btn-register">Create Account</button>
