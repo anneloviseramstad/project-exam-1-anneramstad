@@ -11,8 +11,7 @@ export function navUpdate(username) {
         "<span> Welcome, ${username}! </span> <button id='logout'>Logout</button>";
     } else {
       authLinks.innerHTML =
-        <a href="../account/login.html">Login</a> |
-        <a href="../account/register.html">Register</a>;
+        "a href='login.html'>Login</a> | <a href='register.html'>Register</a>";
     }
 
     const logOutBtn = document.querySelector("#logout");
