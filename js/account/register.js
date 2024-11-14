@@ -1,4 +1,4 @@
-import { API_REGISTER_ENDPOINT } from "../constants/api";
+import { API_REGISTER_ENDPOINT } from "../constants/api.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const registerForm = document.querySelector("#registerForm");
