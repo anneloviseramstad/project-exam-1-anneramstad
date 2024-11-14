@@ -3,7 +3,7 @@ export function getAccessToken() {
 }
 
 export function navUpdate(username) {
-  const authLinks = document.querySelectorAll(".auth-links");
+  const authLinks = document.querySelectorAll(".account-links");
 
   if (authLinks) {
     if (username) {
