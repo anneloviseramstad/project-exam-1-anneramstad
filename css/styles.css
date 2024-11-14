@@ -124,6 +124,10 @@ button {
   border: none;
 }
 
+.button:hover {
+  cursor: pointer;
+}
+
 .newsletter-banner {
   background-color: var(--primary-color);
   color: var(--text-color-secondary);
