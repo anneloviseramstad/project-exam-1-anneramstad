@@ -1,6 +1,6 @@
 // Base URL for the API
 
-export const API_BASE_URL = "https://v2.api.noroff.dev";
+const API_BASE_URL = "https://v2.api.noroff.dev";
 
 // Authentication endpoints
 
