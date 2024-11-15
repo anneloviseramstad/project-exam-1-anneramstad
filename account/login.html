@@ -38,6 +38,9 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward"
     />
+
+    <!-- Scripts -->
+    <script type="module" src="/js/account/login.js" defer></script>
   </head>
   <body>
     <header>
@@ -76,12 +79,22 @@
       </div>
       <div class="account-container">
         <form class="login-form" id="loginForm">
-          <p class="form-title">Sign In Here</p>
-          <label for="text">Username:</label>
-          <input type="text" placeholder="Enter Username" />
-          <label for="password">Password:</label>
-          <input type="password" placeholder="Enter Password" />
-          <button class="btn-login">Sign In</button>
+          <p class="form-title">Register Here</p>
+          <label for="idLogin">Email Address</label>
+          <input
+            class="login-info"
+            id="idLogin"
+            type="text"
+            placeholder="Enter Email Address"
+          />
+          <label for="pwLogin">Password</label>
+          <input
+            class="login-info"
+            id="pwLogin"
+            type="password"
+            placeholder="Enter Password"
+          />
+          <button class="login-btn" id="loginButton">LOG IN</button>
         </form>
       </div>
     </main>
