@@ -29,16 +29,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const idValue = idLogin.value;
     const pwValue = pwLogin.value;
 
-    fetch("API_LOGIN_ENDPOINT", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: idValue,
-        password: pwValue,
-      }),
-    })
+    fetch(
+      { API_LOGIN_ENDPOINT },
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: idValue,
+          password: pwValue,
+        }),
+      }
+    )
       .then((response) => response.json())
       .then((result) => {
         if (result.message === "Login successful") {
