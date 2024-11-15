@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const idValue = idLogin.value;
     const pwValue = pwLogin.value;
 
-    fetch(API_LOGIN_ENDPOINT, {
+    fetch("API_LOGIN_ENDPOINT", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
