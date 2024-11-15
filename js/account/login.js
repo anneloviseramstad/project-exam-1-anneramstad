@@ -2,10 +2,10 @@ import { API_LOGIN_ENDPOINT } from "../constants/api.js";
 import { navUpdate } from "../auth/auth.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const loginForm = document.getElementById("loginForm");
-  const loginButton = document.getElementById("loginButton");
-  const idLogin = document.getElementById("idLogin");
-  const pwLogin = document.getElementById("pwLogin");
+  const loginForm = document.getElementById("#loginForm");
+  const loginButton = document.getElementById("#loginButton");
+  const idLogin = document.getElementById("#idLogin");
+  const pwLogin = document.getElementById("#pwLogin");
 
   const handleIdInput = (event) => {
     console.log("ID input:", event.target.value);
