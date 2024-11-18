@@ -81,19 +81,28 @@
       <div class="account-container">
         <form class="login-form" id="loginForm">
           <p class="form-title">Register Here</p>
-          <label for="idLogin">Email Address</label>
+          <label for="nameField">Name</label>
+          <input
+            type="text"
+            id="nameField"
+            placeholder="Enter Name"
+            autocomplete="name"
+          />
+          <label for="emailField">Email Address</label>
           <input
             class="login-info"
-            id="idLogin"
+            id="emailField"
             type="text"
             placeholder="Enter Email Address"
+            autocomplete="email"
           />
-          <label for="pwLogin">Password</label>
+          <label for="passwordField">Password</label>
           <input
             class="login-info"
-            id="pwLogin"
+            id="passwordField"
             type="password"
             placeholder="Enter Password"
+            autocomplete="current-password"
           />
           <button class="login-btn" id="loginButton">LOG IN</button>
         </form>
