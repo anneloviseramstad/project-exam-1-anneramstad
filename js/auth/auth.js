@@ -3,18 +3,18 @@ export function getAccessToken() {
 }
 
 export function navUpdate(username) {
-  const authLinks = document.querySelectorAll(".account-links");
+  const accountLinks = document.querySelectorAll(".account-links");
 
-  if (authLinks) {
+  if (accountLinks) {
     if (username) {
-      authLinks.innerHTML =
+      accountLinks.innerHTML =
         "<span> Welcome, ${username}! </span> <button id='logout'>Logout</button>";
     } else {
       authLinks.innerHTML =
         "a href='login.html'>Login</a> | <a href='register.html'>Register</a>";
     }
 
-    const logOutBtn = document.querySelector("#logout");
+    const logOutBtn = document.querySelector("#logoutBtn");
     if (logOutBtn) {
       logOutBtn.addEventListener("click", logOut);
     }
