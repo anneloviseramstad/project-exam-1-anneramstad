@@ -9,7 +9,7 @@ export const API_LOGIN_ENDPOINT = `${API_BASE_URL}/auth/login`;
 
 // Blog post endpoints
 
-const BLOG_NAME = "sweetBite";
+const BLOG_NAME = "culinaryCreations";
 export const BLOG_POSTS = `${API_BASE_URL}/blog/posts/${BLOG_NAME}`;
 
 export const GET_POST_BY_ID = (postId) =>

@@ -49,8 +49,8 @@ async function loginUser() {
     const json = await response.json();
     console.log("Login response:", json);
 
-    alert("Login successful! Redirecting to home page...");
-    window.location.href = "../home/index.html";
+    alert("Login successful! Redirecting to blog post page...");
+    window.location.href = "../post/manage.html";
   } catch (error) {
     console.error("Login failed:", error);
     alert("Login failed: ${error.message}");

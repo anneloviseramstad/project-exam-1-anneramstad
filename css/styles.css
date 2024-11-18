@@ -39,6 +39,10 @@
 
 /* Base styles */
 
+html {
+  scroll-behavior: smooth;
+}
+
 main {
   font-family: var(--font-family);
   font-size: var(--base-font-size);
@@ -47,7 +51,8 @@ main {
   margin: auto;
 }
 
-.logo a {
+.logo a,
+.footer.logo {
   font-family: var(--logo-font-family);
   font-size: 2.5em;
   color: var(--text-color-tetriary);
@@ -122,10 +127,11 @@ button {
   color: var(--text-color-secondary);
   padding: 8px 100px;
   border: none;
+  cursor: pointer;
 }
 
-.button:hover {
-  cursor: pointer;
+button:hover {
+  background-color: #7f8669;
 }
 
 .newsletter-banner {
@@ -185,6 +191,16 @@ button {
 .menu {
   display: flex;
   gap: 2em;
+}
+
+.account-links {
+  display: flex;
+  gap: 2em;
+}
+
+.current-page {
+  font-weight: 600;
+  color: var(--tetriary-color);
 }
 
 .hamburger {

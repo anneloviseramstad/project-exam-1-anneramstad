@@ -55,19 +55,45 @@
       </div>
     </header>
     <main>
-      <h1>Edit Blog Post</h1>
-      <form class="edit-form">
-        <label for="title">Edit Title:</label>
-        <input type="text" placeholder="Enter Title" />
-        <label for="content">Edit Content:</label>
-        <input type="text" placeholder="Enter Content" />
-        <label for="image">Update Image:</label>
-        <input type="text" placeholder="Enter Image URL" />
-        <div class="btn-container">
-          <button class="btn-save">Save</button>
-          <button class="btn-delete">Delete</button>
+      <section class="hero">
+        <div class="hero-image--grid">
+          <img
+            src="../images/dominik-martin-JYFmYif4n70-unsplash.jpg"
+            alt="../Hero image"
+          />
+          <img
+            src="../images/don-ricardo-h4axblGzDVQ-unsplash.jpg"
+            alt="Hero image"
+          />
+          <img
+            src="../images/kristen-sturdivant-rbUZH5G6PYc-unsplash.jpg"
+            alt="Hero image"
+          />
+          <img
+            src="../images/polina-kuzovkova-TG0ZF3E1QXg-unsplash.jpg"
+            alt="Hero image"
+          />
         </div>
-      </form>
+        <p class="hero-slogan">Exploring the Heart and Soul of Food.</p>
+      </section>
+      <div class="h1-secondary">
+        <h1>Manage Blog Posts</h1>
+      </div>
+      <div class="carousel">
+        <button class="btn-left" aria-label="Previous">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <div class="carousel-post">
+          <div class="carousel-image-container">
+            <img class="carousel-image" src="#" alt="Blog post image" />
+            <h2 id="carousel-title"></h2>
+          </div>
+        </div>
+        <button class="btn-right" aria-label="Next">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+      <p id="message"></p>
     </main>
     <footer>
       <div class="logo">

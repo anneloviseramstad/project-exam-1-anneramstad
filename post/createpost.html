@@ -55,19 +55,67 @@
       </div>
     </header>
     <main>
-      <h1>Edit Blog Post</h1>
-      <form class="edit-form">
-        <label for="title">Edit Title:</label>
-        <input type="text" placeholder="Enter Title" />
-        <label for="content">Edit Content:</label>
-        <input type="text" placeholder="Enter Content" />
-        <label for="image">Update Image:</label>
-        <input type="text" placeholder="Enter Image URL" />
-        <div class="btn-container">
-          <button class="btn-save">Save</button>
-          <button class="btn-delete">Delete</button>
+      <section class="hero">
+        <div class="hero-image--grid">
+          <img
+            src="../images/dominik-martin-JYFmYif4n70-unsplash.jpg"
+            alt="../Hero image"
+          />
+          <img
+            src="../images/don-ricardo-h4axblGzDVQ-unsplash.jpg"
+            alt="Hero image"
+          />
+          <img
+            src="../images/kristen-sturdivant-rbUZH5G6PYc-unsplash.jpg"
+            alt="Hero image"
+          />
+          <img
+            src="../images/polina-kuzovkova-TG0ZF3E1QXg-unsplash.jpg"
+            alt="Hero image"
+          />
         </div>
-      </form>
+        <p class="hero-slogan">Exploring the Heart and Soul of Food.</p>
+      </section>
+      <div class="h1-secondary">
+        <h1>Create Post</h1>
+      </div>
+      <div class="form-container">
+        <form class="post-form" id="createPostForm">
+          <label for="postTitle">Post Title</label>
+          <input type="text" id="postTitle" name="postTitle" required />
+
+          <label for="postContent">Post Content</label>
+          <textarea
+            id="postContent"
+            name="postContent"
+            rows="6"
+            required
+          ></textarea>
+
+          <label for="imageURL">Image URL</label>
+          <input
+            type="url"
+            id="imageURL"
+            name="imageURL"
+            placeholder="https://example.com/image.jpg"
+            required
+          />
+
+          <label for="imageAltText">Image Alt Text</label>
+          <input type="text" id="imageAltText" name="imageAltText" required />
+
+          <label for="tags">Tags (separate with commas)</label>
+          <input
+            type="text"
+            id="tags"
+            name="tags"
+            placeholder="eg. tag1, tag2"
+            required
+          />
+          <button type="submit">Publish Blogpost</button>
+        </form>
+        <p id="message"></p>
+      </div>
     </main>
     <footer>
       <div class="logo">

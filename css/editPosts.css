@@ -1,0 +1,23 @@
+.form-container {
+  margin: var(--section-margin) 10em;
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-self: center;
+  padding: 2em 10em;
+  color: var(--text-color);
+  text-align: center;
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post-form input,
+.post-form textarea {
+  padding: 1em 0.5em;
+  font-family: var(--font-family-secondary);
+  margin: 1em 0;
+  border: 1px solid #9fa786;
+}
