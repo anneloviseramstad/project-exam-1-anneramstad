@@ -10,7 +10,7 @@ function router() {
     case "/index.html":
       console.log("Blog Feed Page");
       break;
-    case "/home/index.html":
+    case "../home/index.html":
       console.log("Homepage");
       break;
     case "/account/login.html":
