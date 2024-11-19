@@ -16,7 +16,7 @@ function router() {
     case "/account/login.html":
       console.log("Login");
       break;
-    case "/account/register/":
+    case "../account/register/":
       console.log("Registerpage");
       registerHandler;
       break;
