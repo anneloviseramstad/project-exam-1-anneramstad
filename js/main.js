@@ -8,13 +8,14 @@ function router() {
 
   switch (pathname) {
     case "/":
-    case "/index.html":
       console.log("Blog Feed Page");
       break;
     case "/home/index.html":
+    case "/index.html":
       console.log("Homepage");
       break;
     case "/account/login.html":
+    case "/login.html":
       console.log("Login Page");
       break;
     case "/about/index.html":
@@ -24,15 +25,19 @@ function router() {
       console.log("Blog Post Public Page");
       break;
     case "/post/manage.html":
+    case "/manage.html":
       console.log("Manage Posts Page");
       break;
     case "/post/create.html":
+    case "/create.html":
       console.log("Create Post Page");
       break;
     case "/post/edit.html":
+    case "/edit.html":
       console.log("Edit Post Page");
       break;
     case "/account/register.html":
+    case "/register.html":
       console.log("Register Page");
       registerHandler();
       break;
