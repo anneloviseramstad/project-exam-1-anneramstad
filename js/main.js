@@ -2,6 +2,7 @@ import { registerHandler } from "./handlers/auth/registerHandler.js";
 
 function router() {
   const fullPath = window.location.pathname;
+
   const pathParts = fullPath.split("/").slice(2).join("/");
   const pathname = `/${pathParts}`;
 
@@ -10,7 +11,7 @@ function router() {
     case "/index.html":
       console.log("Blog Feed Page");
       break;
-    case "../home/index.html":
+    case "/home/index.html":
       console.log("Homepage");
       break;
     case "/account/login.html":
@@ -33,8 +34,10 @@ function router() {
       break;
     case "/account/register.html":
       console.log("Register Page");
-      registerHandler;
+      registerHandler();
       break;
+    default:
+      console.log("Page not found");
   }
 }
 
