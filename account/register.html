@@ -27,9 +27,7 @@
     ></script>
 
     <!-- Scripts-->
-    <script type="module" src="../js/constants/api.js" defer></script>
-    <script type="module" src="../js/auth/auth.js" defer></script>
-    <script type="module" src="../js/account/register.js" defer></script>
+    <script type="module" src="../js/main.js"></script>
   </head>
   <body>
     <header>
@@ -68,34 +66,43 @@
       </div>
       <div class="account-container">
         <form class="register-form" id="registerForm">
-          <p class="form-title">Register Here</p>
-          <label for="username">Username:</label>
-          <input
-            type="text"
-            id="username-input"
-            name="username"
-            placeholder="Enter Name"
-            autocomplete="username"
-          />
-          <label for="email">Email Address:</label>
-          <input
-            type="email"
-            id="email-input"
-            name="email"
-            placeholder="Enter Email Address"
-            autocomplete="email"
-          />
-          <label for="password">Password:</label>
-          <input
-            type="current-password"
-            id="password-input"
-            name="current-password"
-            placeholder="Enter Password"
-            autocomplete="current-password"
-          />
-          <button type="submit" class="btn-register">Create Account</button>
+          <fieldset>
+            <p class="form-title">Register Here</p>
+            <div id="register-message"></div>
+
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter Name"
+              autocomplete="username"
+              required
+            />
+            <label for="email">Email Address:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter Email Address"
+              pattern="^[^@]+@(stud\.noroff.no)$"
+              title="Please provide a stud.noroff.no email address"
+              autocomplete="email"
+              required
+            />
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter Password"
+              autocomplete="current-password"
+              required
+              minlength="8"
+            />
+            <button type="submit" class="btn-register">Create Account</button>
+          </fieldset>
         </form>
-        <div id="register-message"></div>
       </div>
     </main>
     <footer>

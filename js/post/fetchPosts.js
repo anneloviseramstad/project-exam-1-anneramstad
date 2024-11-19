@@ -1,3 +1,5 @@
+import { API_BASE_URL } from "../constants/api.js";
+
 document.addEventListener("DOMContentLoaded", async () => {
   const blogName = "culinaryCreations";
   const endpoint = `${API_BASE_URL}/blog/posts/${blogName}`;

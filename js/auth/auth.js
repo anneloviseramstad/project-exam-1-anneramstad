@@ -10,7 +10,7 @@ export function navUpdate(username) {
       accountLinks.innerHTML =
         "<span> Welcome, ${username}! </span> <button id='logout'>Logout</button>";
     } else {
-      authLinks.innerHTML =
+      accountLinks.innerHTML =
         "a href='login.html'>Login</a> | <a href='register.html'>Register</a>";
     }
 

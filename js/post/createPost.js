@@ -1,5 +1,8 @@
 // Form Submission and Validation
 
+import { BLOG_POSTS } from "../constants/api.js";
+import { BLOG_NAME } from "../constants/api.js";
+
 document
   .getElementById("createPostForm")
   .addEventListener("submit", async function (event) {
@@ -11,14 +14,16 @@ document
     const imageAltText = document.getElementById("imageAltText").value;
     const tags = document.getElementById("tags").value;
 
-    const blogName = "culinaryCreations";
-    const endpoint = `${API_BASE_URL}/blog/posts/${blogName}`;
+    const blogName = `${BLOG_NAME}`;
+    const endpoint = `${BLOG_POSTS}`;
 
     const postData = {
       title: postTitle,
-      content: postContent,
-      imageUrl: imageURL,
-      imageAltText: imageAltText,
+      body: postContent,
+      media: {
+        url: imageURL,
+        alt: imageAltText,
+      },
       tags: tags.split(",").map((tag) => tag.trim()),
     };
 

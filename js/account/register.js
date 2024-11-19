@@ -27,12 +27,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const options = {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          Authorization: `Bearer ${accessToken}`,
+          "X-Noroff-API-Key": apiKey.data.key,
         },
         body: JSON.stringify({
-          name: name,
-          email: email,
-          password: password,
+          name: "name",
+          email: "email",
+          password: "password",
         }),
       };
 

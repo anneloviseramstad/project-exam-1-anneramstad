@@ -4,7 +4,7 @@
 }
 
 .login-form,
-.register-form {
+fieldset {
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -14,10 +14,11 @@
   padding: 4em 2em;
   color: var(--text-color-secondary);
   font-family: var(--font-family-secondary);
+  border: none;
 }
 
 .login-form input,
-.register-form input {
+fieldset input {
   padding: 0.5em;
   font-family: var(--font-family-secondary);
 }
