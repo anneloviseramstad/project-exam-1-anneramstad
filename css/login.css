@@ -1,10 +1,10 @@
-.account-container {
+fieldset {
   margin: var(--section-margin);
   padding: 2em;
 }
 
 .login-form,
-fieldset {
+.register-form fieldset {
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -18,7 +18,7 @@ fieldset {
 }
 
 .login-form input,
-fieldset input {
+.register-form input {
   padding: 0.5em;
   font-family: var(--font-family-secondary);
 }
