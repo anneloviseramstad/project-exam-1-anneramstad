@@ -1,4 +1,6 @@
 import { registerHandler } from "./handlers/auth/registerHandler.js";
+import { onRegister } from "./ui/auth/register.js";
+import { onLogin } from "./ui/auth/login.js";
 
 function router() {
   const fullPath = window.location.pathname;
@@ -17,6 +19,7 @@ function router() {
     case "/account/login.html":
     case "/login.html":
       console.log("Login Page");
+      onLogin();
       break;
     case "/about/index.html":
       console.log("Aboutpage");
@@ -40,6 +43,7 @@ function router() {
     case "/register.html":
       console.log("Register Page");
       registerHandler();
+      onRegister();
       break;
     default:
       console.log("Page not found");
