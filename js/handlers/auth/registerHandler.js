@@ -1,3 +1,5 @@
+// REGISTER LOGIC
+
 import { registerUser } from "../../api/auth/register.js";
 import { displayMessage } from "../../ui/common/displayMessage.js";
 
@@ -16,25 +18,11 @@ async function submitForm(event) {
 
   const container = document.querySelector("#message");
 
-  console.log(data);
-
-  const fieldset = form.querySelector("fieldset");
-  const button = form.querySelector("button");
-
   try {
-    fieldset.disabled = true;
     await registerUser(data);
-
-    displayMessage(
-      "#message",
-      "success",
-      "Registration successful! Please log in."
-    );
+    displayMessage(container, "success", "Registration successful!");
     form.reset();
   } catch (error) {
-    console.error(error);
     displayMessage(container, "warning", error.message);
-  } finally {
-    fieldset.disabled = false;
   }
 }

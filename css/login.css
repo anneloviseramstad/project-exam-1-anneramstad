@@ -3,7 +3,7 @@ fieldset {
   padding: 2em;
 }
 
-.login-form,
+.login-form fieldset,
 .register-form fieldset {
   display: flex;
   flex-direction: column;

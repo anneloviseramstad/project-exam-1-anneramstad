@@ -1,23 +1,34 @@
+//REGISTER API LOGIC
+
 import { API_REGISTER_ENDPOINT } from "../../constants/api.js";
 
 export async function registerUser(user) {
   const url = `${API_REGISTER_ENDPOINT}`;
 
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-type": "application/json",
-    },
-    body: JSON.stringify(user),
+  const body = {
+    name,
+    email,
+    password,
   };
 
-  const response = await fetch(url, options);
-  const json = await response.json();
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    });
 
-  console.log(response);
-
-  if (!response.ok) {
-    throw new Error(json.errors?.[0]?.message || "Registration failed");
+    if (!response.ok) {
+      alert("Registration successful!");
+      window.location.href = "../account/login.html";
+    } else {
+      const errorData = await response.json();
+      alert(`Registration failed: ${errorData.message || "Unknown error"}`);
+    }
+  } catch (error) {
+    console.error("Registration failed:", error);
+    alert("An error occurred while registering. Please try again.");
   }
-  return json;
 }
