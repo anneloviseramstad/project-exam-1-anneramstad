@@ -1,5 +1,5 @@
 import { registerHandler } from "./handlers/auth/registerHandler.js";
-import { loginHandler } from "./handlers/auth/loginHandler.js";
+import { initLogin } from "./ui/auth/login.js";
 import { loginStatusAndNavStatus } from "./ui/common/navbar.js";
 
 function router() {
@@ -21,7 +21,7 @@ function router() {
     case "/account/login.html":
     case "/login.html":
       console.log("Login Page");
-      loginHandler();
+      initLogin();
       break;
     case "/about/index.html":
       console.log("Aboutpage");
