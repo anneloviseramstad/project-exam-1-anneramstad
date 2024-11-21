@@ -6,9 +6,9 @@ export async function registerUser(user) {
   const url = `${API_REGISTER_ENDPOINT}`;
 
   const body = {
-    name,
-    email,
-    password,
+    name: user.name,
+    email: user.email,
+    password: user.password,
   };
 
   try {
@@ -21,11 +21,11 @@ export async function registerUser(user) {
     });
 
     if (!response.ok) {
-      alert("Registration successful!");
-      window.location.href = "../account/login.html";
-    } else {
       const errorData = await response.json();
       alert(`Registration failed: ${errorData.message || "Unknown error"}`);
+    } else {
+      alert("Registration successful!");
+      window.location.href = "../account/login.html";
     }
   } catch (error) {
     console.error("Registration failed:", error);
