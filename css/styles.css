@@ -281,6 +281,10 @@ button:hover {
     padding: 10px 20px;
   }
 
+  .account-links {
+    flex-direction: column;
+  }
+
   .menu {
     justify-content: start;
     flex-direction: column;

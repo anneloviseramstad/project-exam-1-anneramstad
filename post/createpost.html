@@ -93,29 +93,36 @@
         <h1>Create Post</h1>
       </div>
       <div class="form-container">
-        <form class="post-form" id="createPostForm">
-          <label for="postTitle">Post Title</label>
-          <input type="text" id="postTitle" name="postTitle" required />
+        <form class="post-form" id="createPostForm" name="createPost">
+          <label for="title">Post Title</label>
+          <input
+            type="text"
+            id="title"
+            placeholder="Post Title"
+            name="title"
+            required
+          />
 
-          <label for="postContent">Post Content</label>
+          <label for="body">Post Content</label>
           <textarea
-            id="postContent"
-            name="postContent"
+            id="body"
+            name="body"
+            placeholder="Post Content"
             rows="6"
             required
           ></textarea>
 
-          <label for="imageURL">Image URL</label>
+          <label for="mediaUrl">Image URL</label>
           <input
-            type="url"
-            id="imageURL"
-            name="imageURL"
+            type="text"
+            id="mediaUrl"
+            name="mediaUrl"
             placeholder="https://example.com/image.jpg"
             required
           />
 
-          <label for="imageAltText">Image Alt Text</label>
-          <input type="text" id="imageAltText" name="imageAltText" required />
+          <label for="mediaAlt">Image Alt Text</label>
+          <input type="text" id="mediaAlt" name="mediaAlt" />
 
           <label for="tags">Tags (separate with commas)</label>
           <input
@@ -127,7 +134,6 @@
           />
           <button type="submit">Publish Blogpost</button>
         </form>
-        <p id="message"></p>
       </div>
     </main>
     <footer>

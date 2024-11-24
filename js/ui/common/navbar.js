@@ -1,34 +1,42 @@
-import { loginStatus, logOut } from "../../constants/accessToken.js";
+import {
+  isUserLoggedIn,
+  loginStatus,
+  logOut,
+} from "../../constants/accessToken.js";
 
-export function updateNav(username) {
+export function updateNav() {
   const accountLinks = document.querySelector(".account-links");
+  const userGreeting = document.querySelector(".user-greeting");
+  const logoutButton = document.querySelector(".logout-button");
+  const loginLink = document.querySelector(".login-link");
+  const registerLink = document.querySelector(".register-link");
+
+  const username = loginStatus();
+  const loggedIn = isUserLoggedIn();
 
   if (accountLinks) {
-    if (username) {
-      document.querySelector(".user-greeting").style.display = "block";
-      document.querySelector(".logout-button").style.display = "block";
-      document.querySelector("#username").textContent = username;
-
-      document.querySelector(".login-link").style.display = "none";
-      document.querySelector(".register-link").style.display = "none";
+    if (loggedIn) {
+      if (userGreeting) {
+        userGreeting.style.display = "block";
+        userGreeting.textContent = `Hello, ${username || "User"}`;
+      }
+      if (logoutButton) {
+        logoutButton.style.display = "block";
+        logoutButton.addEventListener("click", logOut);
+      }
+      if (loginLink) loginLink.style.display = "none";
+      if (registerLink) registerLink.style.display = "none";
     } else {
-      document.querySelector(".login-link").style.display = "block";
-      document.querySelector(".register-link").style.display = "block";
-
-      document.querySelector(".user-greeting").style.display = "none";
-      document.querySelector(".logout-button").style.display = "none";
-    }
-
-    const logoutButton = document.querySelector("#logout-button");
-    if (logoutButton) {
-      logoutButton.addEventListener("click", logOut);
+      if (loginLink) loginLink.style.display = "block";
+      if (registerLink) registerLink.style.display = "block";
+      if (userGreeting) userGreeting.style.display = "none";
+      if (logoutButton) logoutButton.style.display = "none";
     }
   }
 }
 
 export function loginStatusAndNavStatus() {
-  const username = loginStatus();
-  updateNav(username);
+  updateNav();
 }
 
 document.addEventListener("DOMContentLoaded", () => {

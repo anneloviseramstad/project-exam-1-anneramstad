@@ -1,14 +1,14 @@
-export function getAccessToken() {
-  return localStorage.getItem("accessToken");
+export function getApiKey() {
+  return localStorage.getItem("apiKey");
 }
 
 export function isUserLoggedIn() {
-  const accessToken = getAccessToken();
-  return accessToken !== null;
+  const apiKey = localStorage.getItem("apiKey");
+  return apiKey !== null;
 }
 
 export function logOut() {
-  localStorage.removeItem("accessToken");
+  localStorage.removeItem("apiKey");
   localStorage.removeItem("username");
   alert("You are now logged out");
   window.location.href = "../account/login.html";

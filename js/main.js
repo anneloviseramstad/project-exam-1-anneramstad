@@ -1,6 +1,8 @@
 import { registerHandler } from "./handlers/auth/registerHandler.js";
 import { initLogin } from "./ui/auth/login.js";
 import { loginStatusAndNavStatus } from "./ui/common/navbar.js";
+import { initCreatePost } from "./ui/posts/initCreatePost.js";
+import { managePostsHandler } from "./handlers/posts/managePostsHandler.js";
 
 function router() {
   const fullPath = window.location.pathname;
@@ -32,10 +34,12 @@ function router() {
     case "/post/manage.html":
     case "/manage.html":
       console.log("Manage Posts Page");
+      managePostsHandler();
       break;
     case "/post/create.html":
-    case "/create.html":
+    case "/createpost.html":
       console.log("Create Post Page");
+      initCreatePost();
       break;
     case "/post/edit.html":
     case "/edit.html":

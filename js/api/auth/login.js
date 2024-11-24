@@ -1,10 +1,7 @@
-// LOGIN API LOGIC
-
 import { API_LOGIN_ENDPOINT } from "../../constants/api.js";
 
 export async function loginUser({ email, password }) {
   const url = `${API_LOGIN_ENDPOINT}`;
-
   const body = {
     email,
     password,
@@ -19,14 +16,18 @@ export async function loginUser({ email, password }) {
       body: JSON.stringify(body),
     });
 
-    if (!response.ok) {
+    if (response.ok) {
+      const data = await response.json();
+      console.log("Response data:", data);
+      return data;
+    } else {
       const errorData = await response.json();
-      throw new Error(errorData.message || "Invalid credentials");
+      throw new Error(
+        errorData.message || `Login failed with status ${response.status}`
+      );
     }
-
-    return await response.json();
   } catch (error) {
-    console.error("Login failed:", error);
-    throw new Error("An error occurred while logging in. Please try again.");
+    console.error("Error during login:", error);
+    throw error;
   }
 }
