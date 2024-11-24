@@ -1,10 +1,9 @@
 //REGISTER API LOGIC
 
 import { API_REGISTER_ENDPOINT } from "../../constants/api.js";
+import { headers } from "../../constants/headers.js";
 
 export async function registerUser(user) {
-  const url = `${API_REGISTER_ENDPOINT}`;
-
   const body = {
     name: user.name,
     email: user.email,
@@ -12,14 +11,11 @@ export async function registerUser(user) {
   };
 
   try {
-    const response = await fetch(url, {
+    const response = await fetch(API_REGISTER_ENDPOINT, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: headers(),
       body: JSON.stringify(body),
     });
-
     if (!response.ok) {
       const errorData = await response.json();
       alert(`Registration failed: ${errorData.message || "Unknown error"}`);

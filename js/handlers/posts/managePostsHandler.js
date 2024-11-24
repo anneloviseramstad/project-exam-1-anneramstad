@@ -16,6 +16,7 @@ export async function managePostsHandler() {
     }
   } catch (error) {
     console.error("Error fetching posts:", error.message);
+    console.log(error.message);
     displayMessage(container, "error", "Failed to fetch posts.");
   }
 }

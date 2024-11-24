@@ -18,26 +18,12 @@ export async function loginHandler(event) {
 
   try {
     const userData = await loginUser({ email, password });
-
-    console.log("User data:", userData);
-
-    const { data } = userData || {};
-    const { accessToken, name } = data || {};
-
-    if (accessToken && name) {
-      // Store credentials in localStorage
-      localStorage.setItem("apiKey", "c3ffc844-20e9-405d-b93a-d32b9871798f");
-      localStorage.setItem("username", name);
-
-      // Update UI (e.g., Navbar) and redirect
-      updateNav(name);
-      window.location.href = "../post/manage.html";
-    } else {
-      console.error("Login failed: Missing access token or username.");
-      alert("Login failed: Missing access token or username.");
-    }
+    console.log(userData);
+    localStorage.setItem("accessToken", userData.accessToken);
+    localStorage.setItem("username", userData.name);
+    updateNav(userData.username);
+    window.location.href = "../post/manage.html";
   } catch (error) {
-    console.error("Login failed:", error);
-    alert("Login failed: " + (error.message || "Unexpected error occurred."));
+    alert("Login failed: " + error.message);
   }
 }

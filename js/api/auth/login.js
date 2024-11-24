@@ -1,33 +1,30 @@
 import { API_LOGIN_ENDPOINT } from "../../constants/api.js";
+import { headers } from "../../constants/headers.js";
 
 export async function loginUser({ email, password }) {
-  const url = `${API_LOGIN_ENDPOINT}`;
-  const body = {
-    email,
-    password,
-  };
-
   try {
-    const response = await fetch(url, {
+    const response = await fetch(API_LOGIN_ENDPOINT, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
+      headers: headers(),
+      body: JSON.stringify({ email, password }),
     });
 
-    if (response.ok) {
-      const data = await response.json();
-      console.log("Response data:", data);
-      return data;
-    } else {
-      const errorData = await response.json();
-      throw new Error(
-        errorData.message || `Login failed with status ${response.status}`
-      );
+    if (!response.ok) {
+      const { message } = await response.json();
+      throw new Error(message || "Unknown error");
     }
+
+    const { data } = await response.json();
+    const { accessToken, name } = data;
+
+    localStorage.setItem("accesstoken", accessToken);
+    localStorage.setItem("username", name);
+
+    JSON.stringify({ name });
+
+    return data;
   } catch (error) {
-    console.error("Error during login:", error);
+    console.error("Login failed:", error);
     throw error;
   }
 }

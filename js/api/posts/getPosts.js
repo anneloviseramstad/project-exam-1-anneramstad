@@ -1,8 +1,8 @@
 import { GET_ALL_POSTS } from "../../constants/api.js";
-import { getApiKey } from "../../constants/accessToken.js";
+import { getAccessToken } from "../../constants/accessToken.js";
 
 export async function getPosts() {
-  const token = getApiKey();
+  const token = getAccessToken();
   if (!token) {
     throw new Error("User is not logged in.");
   }
