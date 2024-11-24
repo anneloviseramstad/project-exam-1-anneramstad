@@ -16,7 +16,7 @@ export async function createPostHandler(event) {
     event.target.reset();
     window.location.href = "../post/manage.html";
   } catch (error) {
-    console.error("Error creating post:", error);
+    console.error("Error creating post:", error.message);
     alert(`Error creating post: " + ${error.message}`);
   }
 }

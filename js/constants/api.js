@@ -11,17 +11,15 @@ export const API_REGISTER_ENDPOINT = `${API_BASE_URL}auth/register`;
 export const API_LOGIN_ENDPOINT = `${API_BASE_URL}auth/login`;
 
 // Blog-post Endpoints
-const BLOG_NAME = "culinarycreations";
+const userName = localStorage.getItem("username");
+const blogName = "culinarycreations";
 
-export const GET_ALL_POSTS = `${API_BASE_URL}blog/posts/${BLOG_NAME}`;
+export const GET_ALL_POSTS = `${API_BASE_URL}blog/posts/${blogName}`;
 
-export const GET_POST_BY_ID = (postId) =>
-  `${API_BASE_URL}blog/posts/${BLOG_NAME}/${postId}`;
+export const GET_POST_BY_ID = (postId) => `${API_BASE_URL}blog/posts/${postId}`;
 
-export const CREATE_POST = `${API_BASE_URL}blog/posts/${BLOG_NAME}`;
+export const CREATE_POST = `${API_BASE_URL}blog/posts/${userName}`;
 
-export const UPDATE_POST = (postId) =>
-  `${API_BASE_URL}blog/posts/${BLOG_NAME}/${postId}`;
+export const UPDATE_POST = (postId) => `${API_BASE_URL}blog/posts/${postId}`;
 
-export const DELETE_POST = (postId) =>
-  `${API_BASE_URL}blog/posts/${BLOG_NAME}/${postId}`;
+export const DELETE_POST = (postId) => `${API_BASE_URL}blog/posts/${postId}`;

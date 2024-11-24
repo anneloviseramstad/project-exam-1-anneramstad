@@ -55,4 +55,9 @@ function router() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", router);
+// document.addEventListener("DOMContentLoaded", router);
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.info("hey");
+  router();
+});
