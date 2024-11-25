@@ -15,13 +15,4 @@ const BLOG_NAME = "oliviacooks";
 
 export const GET_ALL_POSTS = `${API_BASE_URL}blog/posts/${BLOG_NAME}`;
 
-export const GET_POST_BY_ID = (postId) =>
-  `${API_BASE_URL}blog/posts/${BLOG_NAME}/${postId}`;
-
 export const CREATE_POST = `${API_BASE_URL}blog/posts/${BLOG_NAME}`;
-
-export const UPDATE_POST = (postId) =>
-  `${API_BASE_URL}blog/posts/${BLOG_NAME}/${postId}`;
-
-export const DELETE_POST = (postId) =>
-  `${API_BASE_URL}blog/posts/${BLOG_NAME}/${postId}`;

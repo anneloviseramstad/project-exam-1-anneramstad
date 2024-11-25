@@ -1,28 +1,20 @@
-import { GET_POST_BY_ID } from "../../constants/api.js";
-import { getApiKey } from "../../constants/accessToken.js";
+import { GET_ALL_POSTS } from "../../constants/api.js";
+import { headers } from "../../constants/headers.js";
 
-export async function getPostById(postId) {
-  const token = getApiKey();
-  if (!token) {
-    throw new Error("User is not logged in.");
-  }
+export async function getPostById(id) {
   try {
-    const response = await fetch(GET_POST_BY_ID(postId), {
+    const response = await fetch(`${GET_ALL_POSTS}/${id}?author=true`, {
       method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `Bearer ${token}`,
-      },
+      headers: headers(),
     });
 
-    if (!response.ok) {
-      throw new Error("Failed to fetch post.");
+    if (response.ok) {
+      const data = await response.json();
+      return data;
+    } else {
+      console.error("Error fetching post:", response.status);
     }
-
-    const post = await response.json();
-    return post;
   } catch (error) {
-    console.error("Error fetching post:", error.message);
-    throw error;
+    console.error("Error fetching post:", error);
   }
 }

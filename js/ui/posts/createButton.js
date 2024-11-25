@@ -1,13 +1,8 @@
-// createButton.js
-
-export function createDeleteButton(postId, onDeletePost) {
+export function createDeleteButton(postId, deletePostHandler) {
   const deleteButton = document.createElement("button");
   deleteButton.textContent = "Delete";
-  deleteButton.addEventListener("click", () => {
-    if (confirm("Are you sure you want to delete this post?")) {
-      onDeletePost(postId);
-    }
-  });
+  deleteButton.dataset.postId = postId;
+  deleteButton.addEventListener("click", deletePostHandler);
   return deleteButton;
 }
 
@@ -16,6 +11,7 @@ export function createEditButton(postId) {
   editButton.textContent = "Edit";
   editButton.addEventListener("click", () => {
     window.location.href = `/post/edit.html?id=${postId}`;
+    localStorage.setItem("postId", JSON.stringify(postId));
   });
   return editButton;
 }
