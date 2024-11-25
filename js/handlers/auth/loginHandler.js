@@ -28,6 +28,7 @@ export async function loginHandler(event) {
       // Store credentials in localStorage
       localStorage.setItem("apiKey", "c3ffc844-20e9-405d-b93a-d32b9871798f");
       localStorage.setItem("username", name);
+      localStorage.setItem("accesstoken", accessToken);
 
       // Update UI (e.g., Navbar) and redirect
       updateNav(name);
