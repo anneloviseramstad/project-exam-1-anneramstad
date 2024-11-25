@@ -1,28 +1,32 @@
 import { GET_ALL_POSTS } from "../../constants/api.js";
-import { getApiKey } from "../../constants/accessToken.js";
+import { headers } from "../../constants/headers.js";
 
-export async function getPosts() {
-  const token = getApiKey();
-  if (!token) {
-    throw new Error("User is not logged in.");
-  }
+export async function getPosts({ title, body, tags, media }) {
   try {
     const response = await fetch(GET_ALL_POSTS, {
       method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `Bearer ${token}`,
-      },
+      headers: headers(),
+      body: JSON.stringify({
+        title,
+        body,
+        tags,
+        media:
+          media && media.url && media.alt
+            ? { url: media.url, alt: media.alt }
+            : null,
+      }),
     });
 
-    if (!response.ok) {
+    if (response.ok) {
+      const { data } = await response.json();
+      return data;
+    } else {
+      const errorData = await response.json();
+      console.error("Error fetching posts:", errorData.message);
       throw new Error(errorData.message || "Failed to fetch posts.");
     }
-
-    const { data } = await response.json();
-    return data;
   } catch (error) {
-    console.error("Error fetching posts:", error.message);
+    console.error("Error fetching post:", error.message);
     throw error;
   }
 }
