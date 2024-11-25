@@ -18,12 +18,9 @@ export async function loginHandler(event) {
 
   try {
     const userData = await loginUser({ email, password });
-
-    console.log("User data:", userData);
-
+    console.log(userData);
     localStorage.setItem("accesstoken", userData.accessToken);
-    localStorage.setItem("username", userData.username);
-
+    localStorage.setItem("username", userData.name);
     updateNav(userData.username);
     window.location.href = "../post/manage.html";
   } catch (error) {

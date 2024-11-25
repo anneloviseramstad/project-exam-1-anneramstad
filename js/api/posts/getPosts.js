@@ -22,5 +22,3 @@ export async function getPosts() {
     throw error;
   }
 }
-
-const posts = await getPosts();
