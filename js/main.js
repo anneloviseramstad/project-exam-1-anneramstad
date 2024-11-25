@@ -15,6 +15,7 @@ function router() {
   switch (pathname) {
     case "/":
       console.log("Blog Feed Page");
+      managePostsHandler();
       break;
     case "/home/index.html":
     case "/index.html":

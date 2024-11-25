@@ -1,5 +1,26 @@
 /* Post Carousel */
 
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.posts-grid h2 {
+  font-size: 18px;
+  text-align: left;
+}
+
+.posts-grid p {
+  display: none;
+}
+
+.create-post-button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
 .carousel {
   display: flex;
   align-items: center;
