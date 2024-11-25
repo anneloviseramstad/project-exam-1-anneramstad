@@ -1,5 +1,6 @@
 import { getPosts } from "../../api/posts/getPosts.js";
 import { displayMessage } from "../../ui/common/displayMessage.js";
+import { createPostElement } from "../../ui/posts/createPostElement.js";
 
 export async function managePostsHandler() {
   const container = document.querySelector("#postsContainer");
