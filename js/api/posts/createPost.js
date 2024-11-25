@@ -1,7 +1,7 @@
 import { headers } from "../../constants/headers.js";
 import { CREATE_POST } from "../../constants/api.js";
 
-export async function createPost({ title, body, tags = [], media = null }) {
+export async function createPost({ title, body, tags, media }) {
   try {
     const response = await fetch(CREATE_POST, {
       method: "POST",
@@ -22,16 +22,11 @@ export async function createPost({ title, body, tags = [], media = null }) {
       return data;
     } else {
       const errorData = await response.json();
-      console.error(
-        "Error creating post:",
-        response.status,
-        response.statusText,
-        errorData
-      );
-      throw new Error(`Error ${response.status}: ${errorData.message}`);
+      console.error("Error creating post:", errorData.message);
+      throw new Error(errorData.message || "Failed to create post.");
     }
   } catch (error) {
-    console.error("Error creating post:", error);
+    console.error("Error creating post:", error.message);
     throw error;
   }
 }

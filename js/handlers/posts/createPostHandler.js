@@ -13,7 +13,7 @@ export async function createPostHandler(event) {
 
   try {
     const newPost = await createPost({ title, body, tags, media });
-    event.target.reset();
+    form.reset();
     window.location.href = "../post/manage.html";
   } catch (error) {
     console.error("Error creating post:", error.message);
