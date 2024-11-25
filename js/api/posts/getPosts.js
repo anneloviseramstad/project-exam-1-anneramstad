@@ -9,13 +9,17 @@ export async function getPosts() {
     });
 
     if (response.ok) {
-      const data = await response.json();
+      const { data } = await response.json();
+
       return data;
     } else {
-      console.error("Error fetching posts:", response.status);
+      const errorData = await response.json();
+      console.error("Error fetching posts:", errorData.message);
+      throw new Error(errorData.message || "Failed to fetch posts.");
     }
   } catch (error) {
-    console.error("Error fetching posts:", error);
+    console.error("Error fetching post:", error.message);
+    throw error;
   }
 }
 

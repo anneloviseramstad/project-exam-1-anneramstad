@@ -26,6 +26,7 @@ export function createPostElement(post) {
     image.src = post.media.url;
     image.alt = post.media.alt || "Post image";
     image.className = "postImage";
+
     postElement.appendChild(image);
   }
 
