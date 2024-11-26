@@ -15,7 +15,7 @@ export async function deletePostHandler(event) {
     if (success) {
       alert("Post deleted successfully.");
       if (window.location.pathname.includes("post")) {
-        window.location.href = "../post/manage.html";
+        window.location.href = "/post/manage";
       } else {
         postElement.remove();
       }

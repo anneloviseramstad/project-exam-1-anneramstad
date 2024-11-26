@@ -21,7 +21,7 @@ export async function registerUser(user) {
       alert(`Registration failed: ${errorData.message || "Unknown error"}`);
     } else {
       alert("Registration successful!");
-      window.location.href = "../account/login.html";
+      window.location.href = "/account/login";
     }
   } catch (error) {
     console.error("Registration failed:", error);

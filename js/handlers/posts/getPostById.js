@@ -6,7 +6,7 @@ export async function getPostByIdHandler() {
   const id = getQueryParam("id");
 
   if (!id) {
-    window.location.href = "../post/manage.html";
+    window.location.href = "/post/manage";
   }
 
   const container = document.querySelector("#detailedPostContainer");
