@@ -135,6 +135,10 @@ button:hover {
   background-color: #7f8669;
 }
 
+.hidden {
+  display: none;
+}
+
 .newsletter-banner {
   background-color: var(--primary-color);
   color: var(--text-color-secondary);

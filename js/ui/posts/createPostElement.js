@@ -1,4 +1,5 @@
 import { createEditButton, createDeleteButton } from "./createButton.js";
+import { isUserLoggedIn } from "../../constants/accessToken.js";
 
 export function createPostElement(container, post, deletePostHandler) {
   const postElement = document.createElement("div");
@@ -33,6 +34,8 @@ export function createPostElement(container, post, deletePostHandler) {
   link.appendChild(content);
   link.appendChild(metaInfoContainer);
 
+  postElement.appendChild(link);
+
   const buttonsContainer = document.createElement("div");
   buttonsContainer.classList.add("post-buttons");
 
@@ -42,12 +45,13 @@ export function createPostElement(container, post, deletePostHandler) {
   const deleteButton = createDeleteButton(post.id, deletePostHandler);
   deleteButton.classList.add("delete-button");
 
+  if (!isUserLoggedIn()) {
+    buttonsContainer.classList.add("hidden");
+  }
+
   buttonsContainer.appendChild(editButton);
   buttonsContainer.appendChild(deleteButton);
 
-  // Append the link and buttons to the post element
-  postElement.appendChild(link);
   postElement.appendChild(buttonsContainer);
-
   container.appendChild(postElement);
 }
