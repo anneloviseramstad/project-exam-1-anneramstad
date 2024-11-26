@@ -2,7 +2,7 @@ import { getPostById } from "../../api/posts/getPostById.js";
 import { createPostElement } from "../../ui/posts/createPostElement.js";
 import { displayMessage } from "../../ui/common/displayMessage.js";
 
-export async function getPostByIdHandler() {
+export async function getPostByIdHandler(id) {
   if (!id) {
     window.location.href = "/post/manage";
   }
