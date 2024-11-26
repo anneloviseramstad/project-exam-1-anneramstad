@@ -17,37 +17,31 @@ function router() {
       console.log("Blog Feed Page");
       managePostsHandler();
       break;
-    case "/home/index.html":
-    case "/index.html":
+    case "/home":
       console.log("Homepage");
       break;
-    case "/account/login.html":
-    case "/login.html":
+    case "/login":
       console.log("Login Page");
       initLogin();
       break;
     case "/about/index.html":
       console.log("Aboutpage");
       break;
-    case "/post/index.html":
+    case "/post":
       console.log("Blog Post Public Page");
       break;
-    case "/post/manage":
-    case "/manage.html":
+    case "/manage":
       console.log("Manage Posts Page");
       managePostsHandler();
       break;
-    case "/post/create.html":
-    case "/createpost.html":
+    case "/createpost":
       console.log("Create Post Page");
       initCreatePost();
       break;
-    case "/post/edit.html":
-    case "/edit.html":
+    case "/edit":
       console.log("Edit Post Page");
       break;
-    case "/account/register.html":
-    case "/register.html":
+    case "/register":
       console.log("Register Page");
       registerHandler();
       break;
