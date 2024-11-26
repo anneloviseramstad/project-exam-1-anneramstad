@@ -22,7 +22,7 @@ export async function getPostByIdHandler(id) {
     }" />
    <h2>${post.title}</h2>
    <p>${post.body}</p>
-    <p><strong>Tags:</strong> ${post.tags.join(", ")}</p>
+   
       <p><strong>Author:</strong> ${post.author?.name || "Unknown"}</p>
       <p><strong>Created:</strong> ${new Date(
         post.created
