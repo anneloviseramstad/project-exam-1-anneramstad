@@ -1,5 +1,5 @@
 import { createEditButton, createDeleteButton } from "./createButton.js";
-import { isUserLoggedIn } from "../../constants/accessToken.js";
+import { isUserLoggedIn } from "../../constants/accessToken.js"; // For å sjekke om brukeren er logget inn
 
 export function createPostElement(container, post, deletePostHandler) {
   const postElement = document.createElement("div");
@@ -46,7 +46,7 @@ export function createPostElement(container, post, deletePostHandler) {
   deleteButton.classList.add("delete-button");
 
   if (!isUserLoggedIn()) {
-    buttonsContainer.classList.add("hidden");
+    buttonsContainer.classList.add("hidden"); 
   }
 
   buttonsContainer.appendChild(editButton);
