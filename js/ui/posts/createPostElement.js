@@ -1,5 +1,6 @@
-// createPostElement.js
-export function createPostElement(container, post) {
+import { createEditButton, createDeleteButton } from "./createButton.js";
+
+export function createPostElement(container, post, deletePostHandler) {
   const postElement = document.createElement("div");
   postElement.classList.add("post-card");
 
@@ -32,6 +33,21 @@ export function createPostElement(container, post) {
   link.appendChild(content);
   link.appendChild(metaInfoContainer);
 
+  const buttonsContainer = document.createElement("div");
+  buttonsContainer.classList.add("post-buttons");
+
+  const editButton = createEditButton(post.id);
+  editButton.classList.add("edit-button");
+
+  const deleteButton = createDeleteButton(post.id, deletePostHandler);
+  deleteButton.classList.add("delete-button");
+
+  buttonsContainer.appendChild(editButton);
+  buttonsContainer.appendChild(deleteButton);
+
+  // Append the link and buttons to the post element
   postElement.appendChild(link);
+  postElement.appendChild(buttonsContainer);
+
   container.appendChild(postElement);
 }
