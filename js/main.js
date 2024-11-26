@@ -20,7 +20,7 @@ function router() {
     case "/home":
       console.log("Homepage");
       break;
-    case "/login":
+    case "account/login":
       console.log("Login Page");
       initLogin();
       break;
