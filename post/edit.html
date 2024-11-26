@@ -68,18 +68,49 @@
     </header>
     <main>
       <h1>Edit Blog Post</h1>
-      <form class="edit-form">
-        <label for="title">Edit Title:</label>
-        <input type="text" placeholder="Enter Title" />
-        <label for="content">Edit Content:</label>
-        <input type="text" placeholder="Enter Content" />
-        <label for="image">Update Image:</label>
-        <input type="text" placeholder="Enter Image URL" />
-        <div class="btn-container">
-          <button class="btn-save">Save</button>
-          <button class="btn-delete">Delete</button>
-        </div>
-      </form>
+      <div class="form-container">
+        <form class="post-form" id="editPostForm" name="editPost">
+          <label for="title">Post Title</label>
+          <input
+            type="text"
+            id="title"
+            placeholder="Post Title"
+            name="title"
+            required
+          />
+
+          <label for="body">Post Content</label>
+          <textarea
+            id="body"
+            name="body"
+            placeholder="Post Content"
+            rows="6"
+            required
+          ></textarea>
+
+          <label for="mediaUrl">Image URL</label>
+          <input
+            type="text"
+            id="mediaUrl"
+            name="mediaUrl"
+            placeholder="https://example.com/image.jpg"
+            required
+          />
+
+          <label for="mediaAlt">Image Alt Text</label>
+          <input type="text" id="mediaAlt" name="mediaAlt" />
+
+          <label for="tags">Tags (separate with commas)</label>
+          <input
+            type="text"
+            id="tags"
+            name="tags"
+            placeholder="eg. tag1, tag2"
+            required
+          />
+          <button type="submit">Update Blogpost</button>
+        </form>
+      </div>
     </main>
     <footer>
       <div class="logo">
