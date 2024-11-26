@@ -1,4 +1,5 @@
-// createPostElement.js
+import { createEditButton } from "./createButton.js";
+
 export function createPostElement(container, post) {
   const postElement = document.createElement("div");
   postElement.classList.add("post-card");
@@ -20,18 +21,12 @@ export function createPostElement(container, post) {
     <p><strong>Created:</strong> ${new Date(post.created).toLocaleString()}</p>
   `;
 
-  if (post.media?.url) {
-    const image = document.createElement("img");
-    image.src = post.media.url;
-    image.alt = post.media.alt || "Post image";
-    image.className = "postImage";
-    link.appendChild(image);
-  }
+  const editButton = createEditButton(post.id);
+  const buttonsContainer = document.createElement("div");
+  buttonsContainer.classList.add("post-buttons");
+  buttonsContainer.appendChild(editButton);
 
-  link.appendChild(heading);
-  link.appendChild(content);
-  link.appendChild(metaInfoContainer);
+  postElement.append(heading, content, metaInfoContainer, buttonsContainer);
 
-  postElement.appendChild(link);
-  container.appendChild(postElement);
+  return postElement;
 }
