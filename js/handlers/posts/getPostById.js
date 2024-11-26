@@ -12,10 +12,28 @@ export async function getPostByIdHandler(id) {
   try {
     const post = await getPostById(id);
 
-    createPostElement(container, post);
+    if (!post) {
+      displayMessage(container, "warning", "Post not found.");
+      return;
+    }
+
+    container.innerHTML = `<img src="${post.media?.url || ""}" alt="${
+      post.media?.alt || "Post image"
+    }" />
+   <h2>${post.title}</h2>
+   <p>${post.body}</p>
+    <p><strong>Tags:</strong> ${post.tags.join(", ")}</p>
+      <p><strong>Author:</strong> ${post.author?.name || "Unknown"}</p>
+      <p><strong>Created:</strong> ${new Date(
+        post.created
+      ).toLocaleString()}</p>
+   `;
   } catch (error) {
     console.error("Error fetching post:", error);
-    console.log(error.message);
-    displayMessage(container, "error", "Failed to fetch post.");
+    displayMessage(
+      container,
+      "danger",
+      "An error occurred while fetching the post."
+    );
   }
 }
