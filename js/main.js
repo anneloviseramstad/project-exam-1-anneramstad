@@ -32,7 +32,7 @@ function router() {
     case "/post/index.html":
       console.log("Blog Post Public Page");
       break;
-    case "/post/manage.html":
+    case "/post/manage":
     case "/manage.html":
       console.log("Manage Posts Page");
       managePostsHandler();
