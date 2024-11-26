@@ -7,16 +7,7 @@ import { managePostsHandler } from "./handlers/posts/managePostsHandler.js";
 function router() {
   const fullPath = window.location.pathname;
 
-  const repoName =
-    "https://anneloviseramstad.github.io/project-exam-1-anneramstad/";
-  const pathParts = fullPath
-    .replace(
-      repoName,
-      "https://anneloviseramstad.github.io/project-exam-1-anneramstad/"
-    )
-    .split("/")
-    .slice(1)
-    .join("/");
+  const pathParts = fullPath.split("/").slice(2).join("/");
   const pathname = `/${pathParts}`;
 
   loginStatusAndNavStatus();
