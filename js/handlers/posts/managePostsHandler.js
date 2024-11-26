@@ -5,19 +5,19 @@ import { createPostElement } from "../../ui/posts/createPostElement.js";
 export async function managePostsHandler() {
   const container = document.querySelector("#postsContainer");
 
+  container.innerHTML = "";
+
   try {
     const posts = await getPosts();
     if (posts.length > 0) {
       posts.forEach((post) => {
-        const postElement = createPostElement(post);
-        container.appendChild(postElement);
+        createPostElement(container, post);
       });
     } else {
       displayMessage(container, "warning", "No posts found.");
     }
   } catch (error) {
     console.error("Error fetching posts:", error.message);
-    console.log(error.message);
     displayMessage(container, "error", "Failed to fetch posts.");
   }
 }

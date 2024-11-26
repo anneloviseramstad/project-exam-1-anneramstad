@@ -3,14 +3,24 @@ import { initLogin } from "./ui/auth/login.js";
 import { loginStatusAndNavStatus } from "./ui/common/navbar.js";
 import { initCreatePost } from "./ui/posts/initCreatePost.js";
 import { managePostsHandler } from "./handlers/posts/managePostsHandler.js";
+import { getPostByIdHandler } from "./handlers/posts/getPostById.js";
 
 function router() {
   const fullPath = window.location.pathname;
+
+  const searchParams = new URLSearchParams(window.location.search);
+  const postId = searchParams.get("id");
 
   const pathParts = fullPath.split("/").slice(2).join("/");
   const pathname = `/${pathParts}`;
 
   loginStatusAndNavStatus();
+
+  if (postId) {
+    console.log("Post details page");
+    getPostByIdHandler(postId);
+    return;
+  }
 
   switch (pathname) {
     case "/":
@@ -24,7 +34,7 @@ function router() {
       console.log("Login Page");
       initLogin();
       break;
-    case "/about/index.html":
+    case "/about":
       console.log("Aboutpage");
       break;
     case "/post":

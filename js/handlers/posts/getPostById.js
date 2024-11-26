@@ -3,8 +3,6 @@ import { createPostElement } from "../../ui/posts/createPostElement.js";
 import { displayMessage } from "../../ui/common/displayMessage.js";
 
 export async function getPostByIdHandler() {
-  const id = getQueryParam("id");
-
   if (!id) {
     window.location.href = "/post/manage";
   }
