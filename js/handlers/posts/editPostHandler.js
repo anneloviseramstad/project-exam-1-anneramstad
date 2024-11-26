@@ -11,7 +11,7 @@ export async function editPostHandler(event, id) {
   const media = mediaUrl ? { url: mediaUrl, alt: mediaAlt } : null;
 
   try {
-    const editPost = await editPost(id, { title, body, tags, media });
+    const editedPost = await editPost(id, { title, body, tags, media });
     window.location.href = `/`;
   } catch (error) {
     console.error("Error updating post:", error.message);

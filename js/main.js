@@ -4,6 +4,7 @@ import { loginStatusAndNavStatus } from "./ui/common/navbar.js";
 import { initCreatePost } from "./ui/posts/initCreatePost.js";
 import { managePostsHandler } from "./handlers/posts/managePostsHandler.js";
 import { getPostByIdHandler } from "./handlers/posts/getPostById.js";
+import { initEditPost } from "./ui/posts/initEditPost.js";
 
 function router() {
   const fullPath = window.location.pathname;
@@ -50,6 +51,7 @@ function router() {
       break;
     case "/edit":
       console.log("Edit Post Page");
+      initEditPost();
       break;
     case "/register":
       console.log("Register Page");
