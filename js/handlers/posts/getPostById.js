@@ -17,13 +17,13 @@ export async function getPostByIdHandler(id) {
       return;
     }
 
-    container.innerHTML = `<img src="${post.media?.url || ""}" alt="${
+    container.innerHTML = `<img src="${post.data.media?.url || ""}" alt="${
       post.media?.alt || "Post image"
     }" />
-   <h2>${post.title}</h2>
-   <p>${post.body}</p>
+   <h2>${post.data.title}</h2>
+   <p>${post.data.body}</p>
    
-      <p><strong>Author:</strong> ${post.author?.name || "Unknown"}</p>
+      <p><strong>Author:</strong> ${post.data.author?.name || "Unknown"}</p>
       <p><strong>Created:</strong> ${new Date(
         post.created
       ).toLocaleString()}</p>
