@@ -11,10 +11,6 @@
   text-align: left;
 }
 
-.posts-grid p {
-  display: none;
-}
-
 .create-post-button {
   display: flex;
   justify-content: center;
