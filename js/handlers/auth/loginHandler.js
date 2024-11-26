@@ -22,7 +22,7 @@ export async function loginHandler(event) {
     localStorage.setItem("accesstoken", userData.data.accessToken);
     localStorage.setItem("username", userData.data.name);
     updateNav(userData.username);
-    window.location.href = "/post/manage.html";
+    window.location.href = "/post/manage";
   } catch (error) {
     alert("Login failed: " + error.message);
   }
