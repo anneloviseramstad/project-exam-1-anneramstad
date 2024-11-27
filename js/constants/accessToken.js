@@ -11,7 +11,7 @@ export function logOut() {
   localStorage.removeItem("accesstoken");
   localStorage.removeItem("username");
   alert("You are now logged out");
-  window.location.href = "../account/login.html";
+  window.location.href = "/account/login";
 }
 
 export function loginStatus() {
