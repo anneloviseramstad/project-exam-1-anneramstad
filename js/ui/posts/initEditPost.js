@@ -39,6 +39,6 @@ export async function initEditPost() {
   });
 }
 
-if (window.location.pathname === "/edit-post.html") {
+if (window.location.pathname === "/post/edit") {
   initEditPost();
 }
