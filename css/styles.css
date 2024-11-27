@@ -198,6 +198,12 @@ button:hover {
   }
 }
 
+@media (max-width: 640px) {
+  .top-banner--inner {
+    display: none;
+  }
+}
+
 /* Navigation Bar */
 
 .nav-banner {
