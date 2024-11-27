@@ -5,15 +5,7 @@
 }
 
 .post-container h1 {
-  margin: 0;
+  margin: var(--section-margin);
   text-align: center;
-}
-
-.blog-post--info {
-  display: flex;
-  justify-content: space-between;
-}
-
-.blog-post--text {
-  text-align: center;
+  padding: 1em;
 }
