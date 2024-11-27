@@ -121,3 +121,14 @@
     padding-left: 16px;
   }
 }
+
+.legal-container {
+  margin: var(--section-margin);
+  max-width: 1000px;
+  justify-self: center;
+}
+
+.legal-container > * {
+  text-align: center;
+  margin: 2em 0;
+}
