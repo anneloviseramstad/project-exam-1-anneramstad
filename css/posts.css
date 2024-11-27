@@ -13,8 +13,8 @@
 }
 
 @media (max-width: 768px) {
-  .post-container,
-  .about-us-container {
+  .post-container > *,
+  .about-us-container > * {
     text-align: left;
   }
 }
