@@ -6,7 +6,8 @@
   text-align: center;
 }
 
-.about-us-container > * {
+.about-us-container > *,
+.post-container > * {
   padding-top: 1em;
   text-align: center;
 }
