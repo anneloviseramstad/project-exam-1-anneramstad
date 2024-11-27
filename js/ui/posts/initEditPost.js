@@ -12,8 +12,8 @@ export async function initEditPost() {
   }
 
   try {
-    
     const post = await getPosts(postId);
+    console.log(post);
 
     if (!post || !post.data) {
       console.error("Post not found or data is missing.");
@@ -23,7 +23,6 @@ export async function initEditPost() {
 
     const { title, body, tags = [], media } = post.data;
 
-    
     editPostForm.title.value = title || "";
     editPostForm.body.value = body || "";
     editPostForm.tags.value = tags.join(", ") || "";
@@ -34,7 +33,6 @@ export async function initEditPost() {
     alert("An error occurred while loading the post data.");
   }
 
- 
   editPostForm.addEventListener("submit", (event) => {
     editPostHandler(event, postId);
   });
