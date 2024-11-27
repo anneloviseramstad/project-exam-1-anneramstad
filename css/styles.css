@@ -194,7 +194,7 @@ button:hover {
 
 @media (max-width: 1023px) {
   .top-banner--inner {
-    gap: 6em;
+    gap: 4em;
   }
 }
 
@@ -380,6 +380,13 @@ footer {
   display: flex;
   justify-content: center;
   gap: 1.5em;
+}
+
+@media (max-width: 768px) {
+  .footer-links ul {
+    flex-direction: column;
+    line-height: 1em;
+  }
 }
 
 /* Hero */
