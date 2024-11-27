@@ -35,11 +35,12 @@ export async function registerUser({ name, email, password }) {
     const data = await response.json();
 
     if (!response.ok) {
-      alert(`Registration failed: ${error.message || "Unknown error"}`);
+      if (data.errors && data.errors.length > 0) {
+        alert(`Registration failed: ${data.errors[0].message}`);
+      } else {
+        alert(`Registration failed: ${data.message || "Unknown error"}`);
+      }
       return;
-    } else {
-      alert(`Registration successful!`);
-      displayMessage("#message", "success", "Registration successful!");
     }
 
     alert("Registration successful!");
