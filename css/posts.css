@@ -5,12 +5,6 @@
   justify-self: center;
 }
 
-.post-container h1 {
-  margin: var(--section-margin);
-  text-align: center;
-  padding: 1em;
-}
-
 .about-us-container > * {
   padding-top: 1em;
   text-align: center;
