@@ -167,6 +167,16 @@ button:hover {
   padding: 12px;
 }
 
+@media (max-width: 768px) {
+  .newsletter {
+    flex-direction: column;
+    gap: 1em;
+  }
+  .newsletter-banner {
+    margin-top: 1em;
+  }
+}
+
 /* Top Banner */
 
 .top-banner {
@@ -348,6 +358,12 @@ button:hover {
 
 .welcome-image img {
   clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+@media (max-width: 768px) {
+  .welcome-banner--inner {
+    flex-direction: column;
+  }
 }
 
 /* Footer */
