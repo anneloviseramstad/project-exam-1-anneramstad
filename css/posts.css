@@ -12,22 +12,6 @@
   text-align: center;
 }
 
-.share-button {
-  display: inline-block;
-  padding: 10px 20px;
-  margin-top: 10px;
-  font-size: 1rem;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.share-button:hover {
-  background-color: #0056b3;
-}
-
 @media (max-width: 768px) {
   .post-container,
   .about-us-container {
