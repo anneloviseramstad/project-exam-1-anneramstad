@@ -228,11 +228,13 @@ button:hover {
 .menu {
   display: flex;
   gap: 2em;
+  align-items: center;
 }
 
 .account-links {
   display: flex;
   gap: 2em;
+  align-items: center;
 }
 
 .current-page {
