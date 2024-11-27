@@ -29,7 +29,9 @@ export async function getPostByIdHandler(id) {
       <p><strong>Created:</strong> ${new Date(
         post.created
       ).toLocaleString()}</p>
-      <button id="shareButton" class="share-button"></button>
+      <div id="shareButton" class="share-icon" title="Share">
+    <i class="fa-solid fa-link"></i>
+  </div>
    `;
 
     const shareButton = document.getElementById("shareButton");
