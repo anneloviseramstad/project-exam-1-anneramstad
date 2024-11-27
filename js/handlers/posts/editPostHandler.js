@@ -22,8 +22,6 @@ export async function editPostHandler(event, id) {
       return;
     }
 
-    console.log("Updating post with data:", { title, body, tags, media });
-
     await editPost(id, { title, body, tags, media });
 
     window.location.href = `/`;

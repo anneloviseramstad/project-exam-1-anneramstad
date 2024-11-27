@@ -1,5 +1,4 @@
 import { getPostById } from "../../api/posts/getPostById.js";
-import { createPostElement } from "../../ui/posts/createPostElement.js";
 import { displayMessage } from "../../ui/common/displayMessage.js";
 
 export async function getPostByIdHandler(id) {
@@ -30,7 +29,11 @@ export async function getPostByIdHandler(id) {
       <p><strong>Created:</strong> ${new Date(
         post.created
       ).toLocaleString()}</p>
+      <button id="shareButton" class="share-button"></button>
    `;
+
+    const shareButton = document.getElementById("shareButton");
+    shareButton.addEventListener("click", () => copyShareableUrl(id));
   } catch (error) {
     console.error("Error fetching post:", error);
     displayMessage(
@@ -39,4 +42,19 @@ export async function getPostByIdHandler(id) {
       "An error occurred while fetching the post."
     );
   }
+}
+
+function copyShareableUrl(postId) {
+  const currentUrl = window.location.href.split("?")[0];
+  const shareableUrl = `${currentUrl}?id=${postId}`;
+
+  navigator.clipboard
+    .writeText(shareableUrl)
+    .then(() => {
+      alert("Shareable URL copied to clipboard: " + shareableUrl);
+    })
+    .catch((err) => {
+      console.error("Error copying shareable URL:", err);
+      alert("Failed to copy shareable URL.");
+    });
 }
