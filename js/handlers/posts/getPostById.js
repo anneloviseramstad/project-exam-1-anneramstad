@@ -17,7 +17,9 @@ export async function getPostByIdHandler(id) {
       return;
     }
 
-    container.innerHTML = `<h1 class="h1-secondary">${post.data.title}</h1>
+    container.innerHTML = `<div class="h1-secondary">
+        <h1>${post.data.title}</h1>
+      </div>
     <img src="${post.data.media?.url || ""}" alt="${
       post.media?.alt || "Post image"
     }" />

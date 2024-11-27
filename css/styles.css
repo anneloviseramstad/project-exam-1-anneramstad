@@ -182,6 +182,12 @@ button:hover {
   padding: 0.5em 2.5em;
 }
 
+@media (max-width: 1023px) {
+  .top-banner--inner {
+    gap: 6em;
+  }
+}
+
 /* Navigation Bar */
 
 .nav-banner {
@@ -373,8 +379,27 @@ footer {
   justify-self: center;
 }
 
+.hero-image-mobile {
+  display: none;
+}
+
 .hero-image--grid img {
   width: 100%;
   height: 250px;
   object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .hero-image--grid img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-image--grid {
+    display: none;
+  }
+  .hero-image-mobile {
+    display: block;
+  }
 }
