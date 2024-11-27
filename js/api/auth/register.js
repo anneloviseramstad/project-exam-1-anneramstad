@@ -2,6 +2,7 @@ import { API_REGISTER_ENDPOINT } from "../../constants/api.js";
 import { headers } from "../../constants/headers.js";
 
 export async function registerUser({ name, email, password }) {
+  const url = `${API_REGISTER_ENDPOINT}`;
   const body = {
     name,
     email,
@@ -24,7 +25,7 @@ export async function registerUser({ name, email, password }) {
   }
 
   try {
-    const response = await fetch(API_REGISTER_ENDPOINT, {
+    const response = await fetch(url, {
       method: "POST",
       headers: headers(),
       body: JSON.stringify(body),
