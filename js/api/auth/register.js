@@ -1,5 +1,6 @@
 import { API_REGISTER_ENDPOINT } from "../../constants/api.js";
 import { headers } from "../../constants/headers.js";
+import { displayMessage } from "../../ui/common/displayMessage.js";
 
 export async function registerUser({ name, email, password }) {
   const url = `${API_REGISTER_ENDPOINT}`;
@@ -34,8 +35,11 @@ export async function registerUser({ name, email, password }) {
     const data = await response.json();
 
     if (!response.ok) {
-      alert(`Registration failed: ${data.message || "Unknown error"}`);
+      alert(`Registration failed: ${error.message || "Unknown error"}`);
       return;
+    } else {
+      alert(`Registration successful!`);
+      displayMessage("#message", "success", "Registration successful!");
     }
 
     alert("Registration successful!");

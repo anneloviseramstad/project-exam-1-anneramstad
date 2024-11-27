@@ -20,7 +20,7 @@ async function submitForm(event) {
 
   try {
     await registerUser(data);
-    displayMessage(container, "success", "Registration successful!");
+
     form.reset();
   } catch (error) {
     displayMessage(container, "warning", error.message);
