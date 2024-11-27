@@ -1,12 +1,12 @@
 .post-container {
   margin: var(--section-margin);
+  max-width: 1280px;
 }
 
 .post-container h1 {
   margin: 0;
   text-align: center;
 }
-
 
 .blog-post--info {
   display: flex;
