@@ -1,24 +1,24 @@
 import { API_REGISTER_ENDPOINT } from "../../constants/api.js";
 import { headers } from "../../constants/headers.js";
 
-export async function registerUser(user) {
+export async function registerUser({ name, email, password }) {
   const body = {
-    name: user.name,
-    email: user.email,
-    password: user.password,
+    name,
+    email,
+    password,
   };
 
-  if (!user.name || !user.email || !user.password) {
+  if (!name || !email || !password) {
     alert("Please fill out all fields.");
     return;
   }
 
-  if (!/^\S+@\S+\.\S+$/.test(user.email)) {
+  if (!/^\S+@\S+\.\S+$/.test(email)) {
     alert("Please enter a valid email address.");
     return;
   }
 
-  if (user.password.length < 8) {
+  if (password.length < 8) {
     alert("Password must be at least 8 characters long.");
     return;
   }
