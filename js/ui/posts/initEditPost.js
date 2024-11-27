@@ -2,7 +2,7 @@ import { editPostHandler } from "../../handlers/posts/editPostHandler.js";
 import { getPostById } from "../../api/posts/getPostById.js";
 
 const postId = JSON.parse(localStorage.getItem("postId")) || null;
-console.log("Loaded postId from local storage:", postId);
+console.log("Loaded postId from localStorage:", postId);
 const editPostForm = document.getElementById("editPostForm");
 
 export async function initEditPost() {
@@ -39,4 +39,6 @@ export async function initEditPost() {
   });
 }
 
-initEditPost();
+if (window.location.pathname === "/edit-post.html") {
+  initEditPost();
+}
