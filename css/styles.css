@@ -28,7 +28,8 @@
   --base-font-size: 1em;
 
   /* Spacing Variables */
-  --section-margin: 40px;
+  --section-margin: 2em;
+  --section-margin-mobile: 1em;
 
   /* Breakpoint Variables */
   --breakpoint-small: 640px;
@@ -59,6 +60,13 @@ main {
   color: var(--text-color-tetriary);
 }
 
+@media (max-width: 768px) {
+  .logo a,
+  .footer.logo {
+    font-size: 2em;
+  }
+}
+
 h1,
 h2,
 .hero-slogan {
@@ -78,8 +86,10 @@ h2,
   margin-top: var(--section-margin);
 }
 
-.hero-slogan {
-  font-size: 1.5em;
+@media (max-width: 768px) {
+  h1 {
+    margin: 1.2em;
+  }
 }
 
 h3 {
