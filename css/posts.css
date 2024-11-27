@@ -1,6 +1,12 @@
-.blog-post--container {
+.post-container {
   margin: var(--section-margin);
 }
+
+.post-container h1 {
+  margin: 0;
+  text-align: center;
+}
+
 
 .blog-post--info {
   display: flex;
