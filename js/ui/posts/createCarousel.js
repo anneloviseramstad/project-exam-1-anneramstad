@@ -6,7 +6,7 @@ export async function createCarousel() {
   const nextButton = document.querySelector("#nextButton");
 
   try {
-    const posts = await getLatestPosts((limit = 3));
+    const posts = await getLatestPosts(3);
     console.log(posts);
 
     const cardsHTML = posts.data.map(
@@ -28,12 +28,12 @@ export async function createCarousel() {
     }
 
     prevButton.addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + posts.length) % posts.length;
+      currentIndex = (currentIndex - 1 + posts.data.length) % posts.data.length;
       updateCarousel();
     });
 
     nextButton.addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % posts.length;
+      currentIndex = (currentIndex + 1) % posts.data.length;
       updateCarousel();
     });
 

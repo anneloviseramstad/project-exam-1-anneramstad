@@ -1,55 +1,28 @@
-.carousel {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#carouselContainer {
   overflow: hidden;
-  width: 100%;
-  height: 300px;
-  background-color: #f9f9f9;
 }
 
-.carousel-items {
+#carouselItems {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  width: 100%;
-  height: 100%;
-}
-
-.carousel-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 1;
-}
-
-.carousel-button#prevButton {
-  left: 10px;
-}
-
-.carousel-button#nextButton {
-  right: 10px;
 }
 
 .carousel-card {
-  flex: 0 0 100%;
-  text-align: center;
+  width: 100%;
+  min-width: 100%;
+  height: 300px;
   background-size: cover;
   background-position: center;
-  height: 100%;
-  color: white;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.carousel-card h2 {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
   font-size: 24px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  margin: 0 10px;
+  color: var(--secondary-color);
 }
