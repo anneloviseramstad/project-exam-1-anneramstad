@@ -5,7 +5,7 @@ import { initCreatePost } from "./ui/posts/initCreatePost.js";
 import { managePostsHandler } from "./handlers/posts/managePostsHandler.js";
 import { getPostByIdHandler } from "./handlers/posts/getPostById.js";
 import { initEditPost } from "./ui/posts/initEditPost.js";
-
+import { setupCarousel } from "./ui/posts/carousel.js";
 function router() {
   const fullPath = window.location.pathname;
 
@@ -25,6 +25,7 @@ function router() {
   switch (pathname) {
     case "/":
       managePostsHandler();
+      setupCarousel();
       break;
     case "/home":
       break;
@@ -37,6 +38,7 @@ function router() {
       break;
     case "/manage":
       managePostsHandler();
+      setupCarousel();
       break;
     case "/createpost":
       initCreatePost();
