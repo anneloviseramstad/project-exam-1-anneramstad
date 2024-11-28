@@ -152,6 +152,7 @@ button:hover {
 .newsletter-banner {
   background-color: var(--primary-color);
   color: var(--text-color-secondary);
+  margin-bottom: var(--section-margin);
 }
 
 .newsletter {
