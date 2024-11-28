@@ -10,7 +10,7 @@ export async function createCarousel() {
 
     localStorage.setItem("posts", JSON.stringify(posts));
 
-    const cardsHTML = posts.map(
+    const cardsHTML = posts.data.map(
       (post) => `
         <div class="carousel-card" style="background-image: url('${
           post.media?.url || "/default-image.jpg"
