@@ -14,14 +14,14 @@
 }
 
 .carousel-image {
-  width: 300px;
-  height: 200px;
+  width: 600px;
+  height: 400px;
   object-fit: cover;
   border-radius: 8px;
   position: relative;
 }
 
-#carousel-title {
+.carousel-title {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -52,7 +52,7 @@
 
 .btn-left,
 .btn-right {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(187, 186, 186, 0.3);
   color: #333;
   border: none;
   font-size: 1.5rem;
@@ -79,14 +79,43 @@
 
 .btn-left {
   position: absolute;
-  left: -50px;
+  left: -5px;
   top: 50%;
   transform: translateY(-50%);
 }
 
 .btn-right {
   position: absolute;
-  right: -50px;
+  right: -5px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+/* Media query for mindre skjermer */
+@media (max-width: 768px) {
+  .carousel {
+    flex-direction: column; /* Endrer layout til kolonne */
+    align-items: center; /* Sentraliser innholdet */
+  }
+
+  .btn-left,
+  .btn-right {
+    position: static; /* Fjern absolutt posisjonering */
+    margin: 0; /* Nullstiller margin */
+  }
+
+  /* Flex container for knappene */
+  .carousel-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Avstand mellom knappene */
+    margin-top: 1rem; /* Litt avstand mellom bildet og knappene */
+  }
+
+  .btn-left,
+  .btn-right {
+    font-size: 1.2rem; /* Gjør knappene litt mindre */
+    width: 50px;
+    height: 50px;
+  }
 }
