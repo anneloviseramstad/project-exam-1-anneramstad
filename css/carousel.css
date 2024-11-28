@@ -38,21 +38,6 @@
 
 .btn-left,
 .btn-right {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.btn-left:hover,
-.btn-right:hover {
-  background-color: #0056b3;
-}
-
-.btn-left,
-.btn-right {
   background: rgba(187, 186, 186, 0.3);
   color: #333;
   border: none;
@@ -92,31 +77,30 @@
   transform: translateY(-50%);
 }
 
-/* Media query for mindre skjermer */
 @media (max-width: 768px) {
   .carousel {
-    flex-direction: column; /* Endrer layout til kolonne */
-    align-items: center; /* Sentraliser innholdet */
+    flex-direction: column;
+    align-items: center;
+    margin: 0.5em;
   }
-
   .btn-left,
   .btn-right {
-    position: static; /* Fjern absolutt posisjonering */
-    margin: 0; /* Nullstiller margin */
+    position: static;
+    margin: 0;
+    font-size: 1.2rem;
+    width: 50px;
+    height: 50px;
+    transform: translateY(0);
   }
-
-  /* Flex container for knappene */
+  .carousel-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+  }
   .carousel-buttons {
     display: flex;
     justify-content: center;
-    gap: 1rem; /* Avstand mellom knappene */
-    margin-top: 1rem; /* Litt avstand mellom bildet og knappene */
-  }
-
-  .btn-left,
-  .btn-right {
-    font-size: 1.2rem; /* Gjør knappene litt mindre */
-    width: 50px;
-    height: 50px;
+    gap: 1rem;
+    margin-top: 1rem;
   }
 }
