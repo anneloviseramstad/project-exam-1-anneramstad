@@ -6,11 +6,11 @@ export async function createCarousel() {
   const nextButton = document.querySelector("#nextButton");
 
   try {
-    const posts = await getLatestPosts(3); // Hent innleggene
+    const posts = await getLatestPosts(3);
 
     localStorage.setItem("posts", JSON.stringify(posts));
 
-    const cardsHTML = posts.data.map(
+    const cardsHTML = posts(
       (post) => `
         <div class="carousel-card" style="background-image: url('${
           post.media?.url || "/default-image.jpg"
