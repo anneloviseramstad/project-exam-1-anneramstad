@@ -1,4 +1,5 @@
 export async function setupCarousel(posts) {
+  console.log("Posts:", posts);
   if (!posts || posts.length === 0) {
     console.error("No posts found");
     return;
