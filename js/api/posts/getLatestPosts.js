@@ -7,5 +7,7 @@ export async function getLatestPosts(limit = 3) {
   if (!response.ok) {
     throw new Error("Failed to fetch latest posts.");
   }
-  return await response.json();
+  const data = await response.json();
+  console.log(data);
+  return data;
 }
