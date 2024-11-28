@@ -11,6 +11,8 @@ export async function getPosts() {
     if (response.ok) {
       const { data } = await response.json();
 
+      localStorage.setItem("posts", JSON.stringify(data));
+
       return data;
     } else {
       const errorData = await response.json();

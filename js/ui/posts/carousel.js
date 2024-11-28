@@ -1,3 +1,7 @@
+const posts = localStorage.getItem("posts")
+  ? JSON.parse(localStorage.getItem("posts"))
+  : [];
+
 export async function setupCarousel(posts) {
   console.log("Posts:", posts);
   if (!posts || posts.length === 0) {
