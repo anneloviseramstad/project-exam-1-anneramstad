@@ -6,10 +6,11 @@ export async function createCarousel() {
   const nextButton = document.querySelector("#nextButton");
 
   try {
-    const posts = await getLatestPosts(3);
-    console.log(posts);
+    const posts = await getLatestPosts(3); // Hent innleggene
 
-    const cardsHTML = posts.data.map(
+    localStorage.setItem("posts", JSON.stringify(posts));
+
+    const cardsHTML = posts.map(
       (post) => `
         <div class="carousel-card" style="background-image: url('${
           post.media?.url || "/default-image.jpg"
@@ -28,12 +29,12 @@ export async function createCarousel() {
     }
 
     prevButton.addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + posts.data.length) % posts.data.length;
+      currentIndex = (currentIndex - 1 + posts.length) % posts.length;
       updateCarousel();
     });
 
     nextButton.addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % posts.data.length;
+      currentIndex = (currentIndex + 1) % posts.length;
       updateCarousel();
     });
 

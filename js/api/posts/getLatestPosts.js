@@ -1,13 +1,9 @@
-import { GET_ALL_POSTS } from "../../constants/api.js";
-
 export async function getLatestPosts(limit = 3) {
-  const response = await fetch(
-    `${GET_ALL_POSTS}?_sort=created_at:desc&_limit=${limit}`
-  );
-  if (!response.ok) {
-    throw new Error("Failed to fetch latest posts.");
+  const posts = JSON.parse(localStorage.getItem("posts"));
+
+  if (!posts) {
+    return [];
   }
-  const data = await response.json();
-  console.log(data);
-  return data;
+
+  return posts.slice(0, limit);
 }
