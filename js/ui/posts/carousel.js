@@ -22,13 +22,4 @@ function updateCarousel() {
   carouselTitle.textContent = currentPost.title || "No title";
 }
 
-
-<div class="carousel">
-        <button class="btn-left" aria-label="Previous">
-          <i class="fa-solid fa-arrow-left"></i>
-        </button>
-
-        <button class="btn-right" aria-label="Next">
-          <i class="fa-solid fa-arrow-right"></i>
-        </button>
-      </div>
+updateCarousel();
