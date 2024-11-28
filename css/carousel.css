@@ -1,28 +1,35 @@
-#carouselContainer {
-  overflow: hidden;
-}
-
-#carouselItems {
+.carousel {
   display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.carousel-card {
-  width: 100%;
-  min-width: 100%;
-  height: 300px;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
-button {
+.carousel-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.carousel-image {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.btn-left,
+.btn-right {
+  background-color: #007bff;
+  color: white;
   border: none;
-  background-color: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
   cursor: pointer;
-  font-size: 24px;
-  margin: 0 10px;
-  color: var(--secondary-color);
+}
+
+.btn-left:hover,
+.btn-right:hover {
+  background-color: #0056b3;
 }
