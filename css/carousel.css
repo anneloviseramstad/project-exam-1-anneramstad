@@ -11,7 +11,6 @@
 .carousel-content {
   position: relative;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-image {
@@ -20,6 +19,7 @@
   object-fit: cover;
   border-radius: 8px;
   position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-title {
