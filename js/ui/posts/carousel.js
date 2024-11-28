@@ -1,4 +1,4 @@
-import { getPosts } from "../../path/to/getPosts.js";
+import { getPosts } from "../../api/posts/getPosts.js";
 
 export async function setupCarousel() {
   try {
