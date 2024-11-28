@@ -7,6 +7,7 @@ export async function createCarousel() {
 
   try {
     const posts = await getLatestPosts(3);
+    console.log(posts);
 
     const cardsHTML = posts.map(
       (post) => `
