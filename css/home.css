@@ -44,11 +44,32 @@
     flex-direction: column;
   }
   .main-content--image img {
-    height: 500px;
+    height: auto;
     width: 100%;
     object-fit: cover;
   }
 }
 
 @media (max-width: 768px) {
+  .main-presentation,
+  .main-culture,
+  .main-about {
+    margin: 1.5em 0;
+    padding-top: 0;
+  }
+  .main-content--text h3 {
+    display: none;
+  }
+  .main-content--text {
+    margin: 1em;
+  }
+  .main-presentation {
+    padding-bottom: 0;
+  }
+  .h1-homepage {
+    margin: 0.5em;
+  }
+  .main-content {
+    gap: 0.5em;
+  }
 }
