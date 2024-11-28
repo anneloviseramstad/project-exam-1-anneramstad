@@ -6,7 +6,7 @@ export async function createCarousel() {
   const nextButton = document.querySelector("#nextButton");
 
   try {
-    const posts = await getLatestPosts(3);
+    const posts = await getLatestPosts((limit = 3));
     console.log(posts);
 
     const cardsHTML = posts.data.map(
