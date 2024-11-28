@@ -19,7 +19,8 @@
 @media (max-width: 768px) {
   .posts-grid {
     grid-template-columns: 1fr;
-    gap: 1.5em;
+    gap: 3em;
+    margin: 0;
   }
 }
 
@@ -31,6 +32,14 @@
 
 .post-card a img {
   border-radius: 4px 4px 0 0;
+}
+
+@media (max-width: 768px) {
+  .post-card a img,
+  .post-card {
+    border-radius: 0;
+    box-shadow: none;
+  }
 }
 
 .post-card a h2 {
