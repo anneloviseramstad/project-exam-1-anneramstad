@@ -24,9 +24,14 @@
 }
 
 .post-card {
-  background-color: var(--secondary-color);
+  background-color: #e2e2e0;
   padding: 1em;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.post-card a img {
+  border-radius: 4px;
 }
 
 .post-card a h2 {
