@@ -4,6 +4,7 @@
 @import url("login.css");
 @import url("blog.css");
 @import url("alerts.css");
+@import url("carousel.css");
 
 * {
   margin: 0;
