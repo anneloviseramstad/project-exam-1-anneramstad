@@ -18,7 +18,7 @@ export function filterPosts(posts) {
     container.innerHTML = "";
 
     filteredPosts.forEach((post) => {
-      createPostElement(container, post, deletePostHandler);
+      createPostElement(container, post);
     });
   }
 }
