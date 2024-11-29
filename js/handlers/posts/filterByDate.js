@@ -1,5 +1,3 @@
-import { getPosts } from "../../api/posts/getPosts.js";
-
 export async function filterPostsByDate(order) {
   try {
     const posts = await getPosts();
@@ -9,9 +7,9 @@ export async function filterPostsByDate(order) {
       const dateB = new Date(b.created);
 
       if (order === "newest-oldest") {
-        return dateB - dateA; // Nyeste til eldste
+        return dateB - dateA;
       } else if (order === "oldest-newest") {
-        return dateA - dateB; // Eldste til nyeste
+        return dateA - dateB; 
       }
       return 0;
     });
