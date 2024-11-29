@@ -9,7 +9,7 @@ export async function filterPostsByDate(order) {
       if (order === "newest-oldest") {
         return dateB - dateA;
       } else if (order === "oldest-newest") {
-        return dateA - dateB; 
+        return dateA - dateB;
       }
       return 0;
     });

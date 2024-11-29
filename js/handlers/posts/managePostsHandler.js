@@ -3,7 +3,7 @@ import { displayMessage } from "../../ui/common/displayMessage.js";
 import { createPostElement } from "../../ui/posts/createPostElement.js";
 import { deletePostHandler } from "./deletePostHandler.js";
 import { filterPosts } from "./filterPosts.js";
-import { filterByDate } from "./filterByDate.js";
+import { filterPostsByDate } from "./filterByDate.js";
 
 export async function managePostsHandler() {
   const container = document.querySelector("#postsContainer");
@@ -18,7 +18,7 @@ export async function managePostsHandler() {
       });
 
       filterPosts(posts);
-      filterByDate(posts);
+      filterPostsByDate(posts);
     } else {
       displayMessage(container, "warning", "No posts found.");
     }
