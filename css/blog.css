@@ -112,6 +112,10 @@
   font-size: var(--base-font-size);
 }
 
+.post-buttons {
+  justify-content: center;
+}
+
 .edit-button button:hover {
   background-color: #727c62;
 }
