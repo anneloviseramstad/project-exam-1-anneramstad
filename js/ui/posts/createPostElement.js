@@ -15,11 +15,17 @@ export function createPostElement(container, post, deletePostHandler) {
   const content = document.createElement("p");
   content.textContent = post.body;
 
+  const readMoreButton = document.createElement("button");
+  readMoreButton.textContent = "Read more";
+  readMoreButton.classList.add("read-more-btn");
+
   const metaInfoContainer = document.createElement("div");
   metaInfoContainer.innerHTML = `
-    <p><strong>Tags:</strong> ${post.tags.join(", ")}</p>
-    <p><strong>Author:</strong> ${post.author?.name || "Unknown"}</p>
-    <p><strong>Created:</strong> ${new Date(post.created).toLocaleString()}</p>
+    <h3><strong>Tags:</strong> ${post.tags.join(", ")}</h3>
+    <h3><strong>Author:</strong> ${post.author?.name || "Unknown"}</h3>
+    <h3><strong>Created:</strong> ${new Date(
+      post.created
+    ).toLocaleString()}</h3>
   `;
 
   if (post.media?.url) {
@@ -32,6 +38,7 @@ export function createPostElement(container, post, deletePostHandler) {
 
   link.appendChild(heading);
   link.appendChild(content);
+  link.appendChild(readMoreButton);
   link.appendChild(metaInfoContainer);
 
   postElement.appendChild(link);
@@ -46,7 +53,7 @@ export function createPostElement(container, post, deletePostHandler) {
   deleteButton.classList.add("delete-button");
 
   if (!isUserLoggedIn()) {
-    buttonsContainer.classList.add("hidden"); 
+    buttonsContainer.classList.add("hidden");
   }
 
   buttonsContainer.appendChild(editButton);

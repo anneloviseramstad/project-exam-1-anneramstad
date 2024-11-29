@@ -39,6 +39,12 @@
     border-radius: 0;
     box-shadow: none;
   }
+
+  .post-card a h2,
+  .post-card p,
+  .read-more-btn {
+    margin: 0.5em;
+  }
 }
 
 .post-card a h2 {
@@ -51,9 +57,10 @@
 }
 
 .posts-grid h2 {
-  font-size: 18px;
+  font-size: 1em;
   text-align: left;
   margin: 0;
+  font-weight: 500;
 }
 
 .posts-grid p {
@@ -71,17 +78,29 @@
   mask-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(0, 0, 0, 0));
   margin-bottom: 0.1em;
   padding: 0.1em;
+  font-size: 1em;
 }
 
-.posts-grid h3 {
+.post-card a div {
   display: none;
 }
 
-.post-buttons {
-  display: flex;
-  gap: 1em;
-  justify-content: space-between;
-  margin-top: 1em;
+.read-more-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  background: none;
+  color: var(--tetriary-color);
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding-left: 0;
+  font-size: 1.1em;
+}
+
+.read-more-btn:hover {
+  background-color: #0056b3;
 }
 
 .post-buttons button {
