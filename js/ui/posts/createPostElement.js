@@ -16,7 +16,7 @@ export function createPostElement(container, post, deletePostHandler) {
   content.textContent = post.body;
 
   const readMoreButton = document.createElement("button");
-  readMoreButton.textContent = "Read more";
+  readMoreButton.textContent = "Read more..";
   readMoreButton.classList.add("read-more-btn");
 
   const metaInfoContainer = document.createElement("div");
