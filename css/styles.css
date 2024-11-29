@@ -348,6 +348,7 @@ button:hover {
     height: 100%;
     padding-top: 150px;
     margin: 0;
+    text-align: center;
   }
   .menu li {
     width: 100%;

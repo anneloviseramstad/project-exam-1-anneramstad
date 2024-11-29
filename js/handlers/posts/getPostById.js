@@ -24,11 +24,11 @@ export async function getPostByIdHandler(id) {
     }" />
    
    <p>${post.data.body}</p>
-   
-      <p><strong>Author:</strong> ${post.data.author?.name || "Unknown"}</p>
-      <p><strong>Created:</strong> ${new Date(
+ 
+      <h3><strong>Author:</strong> ${post.data.author?.name || "Unknown"}</h3>
+      <h3><strong>Created:</strong> ${new Date(
         post.created
-      ).toLocaleString()}</p>
+      ).toLocaleString()}</h3>
       <div id="shareButton" class="share-icon" title="Share">
     <i class="fa-solid fa-link"></i>
   </div>
