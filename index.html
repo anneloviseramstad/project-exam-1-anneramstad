@@ -126,32 +126,34 @@
           </form>
         </div>
       </div>
-      <div class="container">
-        <div class="filterbox">
-          <input id="search" placeholder="Search..." />
-          <select id="sizes">
-            <option value="">Select Size</option>
-            <option value="XS">X-Small</option>
-            <option value="S">Small</option>
-            <option value="M">Medium</option>
-            <option value="L">Large</option>
-            <option value="XL">X-Large</option>
-            <option value="XXL">2X-Large</option>
-          </select>
-          <select id="baseColor">
-            <option value="Black">Black</option>
-            <option value="Blue">Blue</option>
-            <option value="Green">Green</option>
-            <option value="Yellow">Yellow</option>
-            <option value="Purple">Purple</option>
-            <option value="Red">Red</option>
-            <option value="Gray">Gray</option>
-          </select>
-        </div>
-        <div id="posts-container" class="posts-container">
-          <p>Loading products...</p>
-        </div>
-      </div>
+      <form id="filterForm">
+        <label for="searchInput">Search by title:</label>
+        <input type="text" id="searchInput" placeholder="Search by title" />
+
+        <label for="filterTag">Tag:</label>
+        <input
+          type="text"
+          id="filterTag"
+          name="tag"
+          placeholder="Search by tag"
+        />
+
+        <label for="filterAuthor">Author:</label>
+        <input
+          type="text"
+          id="filterAuthor"
+          name="author"
+          placeholder="Search by author"
+        />
+
+        <label for="filterDateSort">Sort by date:</label>
+        <select id="filterDateSort">
+          <option value="newest-oldest">Newest to Oldest</option>
+          <option value="oldest-newest">Oldest to Newest</option>
+        </select>
+
+        <button type="submit">Filter</button>
+      </form>
       <div id="postsContainer" class="posts-grid"></div>
       <p id="message"></p>
       <div class="welcome-banner">

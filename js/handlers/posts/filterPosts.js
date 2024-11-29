@@ -1,21 +1,59 @@
 import { createPostElement } from "../../ui/posts/createPostElement.js";
 
-export function filterPosts(posts) {
-  const searchInput = document.querySelector("#search");
+export async function filterBar(posts, searchQuery, filterCriteria) {
+  const filteredPosts = posts.filter((post) => {
+    const titleMatch = searchQuery
+      ? post.title.toLowerCase().includes(searchQuery.toLowerCase())
+      : true;
 
-  if (searchInput) {
-    searchInput.addEventListener("input", handleFilter);
+    const tagMatch = filterCriteria.tag
+      ? post.tags.includes(filterCriteria.tag)
+      : true;
+
+    const authorMatch = filterCriteria.author
+      ? post.author.name === filterCriteria.author
+      : true;
+
+    return titleMatch && tagMatch && authorMatch;
+  });
+
+  if (filterCriteria.dateSort === "newest-oldest") {
+    filteredPosts.sort((a, b) => new Date(b.created) - new Date(a.created));
+  } else if (filterCriteria.dateSort === "oldest-newest") {
+    filteredPosts.sort((a, b) => new Date(a.created) - new Date(b.created));
   }
 
-  function handleFilter(event) {
-    const filterValue = event.target.value.trim().toLowerCase();
+  const container = document.querySelector("#postsContainer");
+  container.innerHTML = "";
 
-    const filterPosts = posts.filter((posts) => {
-      if (posts.title.toLowerCase().startsWith(filterValue)) {
-        return true;
-      }
-    });
+  filteredPosts.forEach((post) => {
+    createPostElement(container, post, deletePostHandler);
+  });
+}
 
-    createPostElement("#posts-container", filterPosts);
-  }
+export function setupFilterBar(posts) {
+  const filterForm = document.querySelector("#filterForm");
+  filterForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const searchQuery = document.querySelector("#searchInput").value;
+    const filterCriteria = {
+      tag: document.querySelector("#tagSelect").value,
+      author: document.querySelector("#authorSelect").value,
+      dateSort: document.querySelector("#dateSortSelect").value,
+    };
+
+    filterBar(posts, searchQuery, filterCriteria);
+  });
+
+  const searchInput = document.querySelector("#searchInput");
+  searchInput.addEventListener("input", () => {
+    const searchQuery = searchInput.value;
+    const filterCriteria = {
+      tag: document.querySelector("#tagSelect").value,
+      author: document.querySelector("#authorSelect").value,
+      dateSort: document.querySelector("#dateSortSelect").value,
+    };
+    setupFilterBar(posts, searchQuery, filterCriteria);
+  });
 }
