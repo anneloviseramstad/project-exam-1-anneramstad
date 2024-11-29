@@ -1,5 +1,5 @@
 import { createEditButton, createDeleteButton } from "./createButton.js";
-import { isUserLoggedIn } from "../../constants/accessToken.js"; // For å sjekke om brukeren er logget inn
+import { isUserLoggedIn } from "../../constants/accessToken.js";
 
 export function createPostElement(container, post, deletePostHandler) {
   const postElement = document.createElement("div");

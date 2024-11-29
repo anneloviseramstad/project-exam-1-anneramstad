@@ -1,4 +1,4 @@
-import { createPostElement } from "../../ui/posts/createPostElement.js";
+import { getPosts } from "../../api/posts/getPosts.js";
 
 export function filterPosts(posts) {
   const searchInput = document.querySelector("#search");
@@ -16,6 +16,6 @@ export function filterPosts(posts) {
       }
     });
 
-    createPostElement("#postsContainer", filterPosts);
+    getPosts("#postsContainer", filterPosts);
   }
 }
