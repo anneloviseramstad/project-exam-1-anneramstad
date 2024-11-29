@@ -1,8 +1,6 @@
 import { GET_ALL_POSTS } from "../../constants/api.js";
 import { headers } from "../../constants/headers.js";
 
-let currentPage = 1;
-
 export async function getPosts(limit = 12, tag) {
   try {
     const params = new URLSearchParams({
@@ -17,7 +15,7 @@ export async function getPosts(limit = 12, tag) {
     });
 
     if (response.ok) {
-      const { data, totalPages } = await response.json();
+      const { data } = await response.json();
 
       localStorage.setItem("posts", JSON.stringify(data));
 
@@ -32,40 +30,3 @@ export async function getPosts(limit = 12, tag) {
     throw error;
   }
 }
-
-function updatePagination(totalPages) {
-  const paginationContainer = document.querySelector("#paginationContainer");
-
-  paginationContainer.innerHTML = "";
-
-  for (let i = 1; i <= totalPages; i++) {
-    const pageButton = document.createElement("button");
-    pageButton.innerText = i;
-    pageButton.classList.add("page-button");
-    if (i === currentPage) {
-      pageButton.disabled = true;
-    }
-    pageButton.addEventListener("click", () => changePage(i));
-    paginationContainer.appendChild(pageButton);
-  }
-}
-
-function changePage(pageNumber) {
-  currentPage = pageNumber;
-  loadPosts();
-}
-
-async function loadPosts() {
-  const posts = await getPosts();
-  const postsContainer = document.getElementById("postsContainer");
-
-  postsContainer.innerHTML = "";
-
-  posts.forEach((post) => {
-    const postElement = document.createElement("div");
-    postElement.className = "post";
-    postElement.innerText = post.title;
-    postsContainer.appendChild(postElement);
-  });
-}
-loadPosts();
