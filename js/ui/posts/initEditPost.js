@@ -2,7 +2,7 @@ import { editPostHandler } from "../../handlers/posts/editPostHandler.js";
 import { getPostById } from "../../api/posts/getPostById.js";
 
 const postId = JSON.parse(localStorage.getItem("postId")) || null;
-console.log("Loaded postId from localStorage:", postId);
+
 const editPostForm = document.getElementById("editPostForm");
 
 export async function initEditPost() {
@@ -14,7 +14,6 @@ export async function initEditPost() {
 
   try {
     const post = await getPostById(postId);
-    console.log("Fetched post:", post);
 
     if (!post || !post.data) {
       console.error("Post not found or data is missing.");

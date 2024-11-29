@@ -3,7 +3,6 @@ import { getPosts } from "../../api/posts/getPosts.js";
 export async function setupCarousel() {
   try {
     const posts = await getPosts();
-    console.log("Fetched Posts:", posts);
 
     if (!posts || posts.length === 0) {
       console.error("No posts found");

@@ -1,6 +1,10 @@
-import { createPostElement } from "../../ui/posts/createPostElement.js";
+import { getPosts } from "../../api/posts/getPosts.js";
 
 export async function filterBar(posts, searchQuery, filterCriteria) {
+  if (!Array.isArray(posts)) {
+    console.error("Posts is not an array or is undefined");
+    return; // Hvis 'posts' ikke er definert, avslutt funksjonen tidlig
+  }
   const filteredPosts = posts.filter((post) => {
     const titleMatch = searchQuery
       ? post.title.toLowerCase().includes(searchQuery.toLowerCase())
@@ -27,7 +31,7 @@ export async function filterBar(posts, searchQuery, filterCriteria) {
   container.innerHTML = "";
 
   filteredPosts.forEach((post) => {
-    createPostElement(container, post, deletePostHandler);
+    getPosts(container, post, deletePostHandler);
   });
 }
 
