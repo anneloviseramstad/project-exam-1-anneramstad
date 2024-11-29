@@ -1,7 +1,7 @@
 import { GET_ALL_POSTS } from "../../constants/api.js";
 import { headers } from "../../constants/headers.js";
 
-export async function getPosts(limit = 12, tag) {
+export async function getPosts(limit = 12, tag, page = 1) {
   try {
     const params = new URLSearchParams({
       limit: limit.toString(),
