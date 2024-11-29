@@ -89,7 +89,6 @@ h2,
 .h1-secondary {
   background-color: var(--secondary-color);
   padding: 0.2em;
-  margin-top: var(--section-margin);
 }
 
 @media (max-width: 768px) {
