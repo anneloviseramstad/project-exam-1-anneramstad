@@ -1,4 +1,4 @@
-import { getPosts } from "../../api/posts/getPosts.js";
+import { createPostElement } from "../../ui/posts/createPostElement.js";
 
 export function filterPosts(posts) {
   const searchInput = document.querySelector("#search");
@@ -10,12 +10,15 @@ export function filterPosts(posts) {
   function handleFilter(event) {
     const filterValue = event.target.value.trim().toLowerCase();
 
-    const filterPosts = posts.filter((post) => {
-      if (post.title.toLowerCase().startsWith(filterValue)) {
-        return true;
-      }
-    });
+    const filteredPosts = posts.filter((post) =>
+      post.title.toLowerCase().startsWith(filterValue)
+    );
 
-    getPosts("#postsContainer", filterPosts);
+    const container = document.querySelector("#postsContainer");
+    container.innerHTML = "";
+
+    filteredPosts.forEach((post) => {
+      createPostElement(container, post, deletePostHandler);
+    });
   }
 }
