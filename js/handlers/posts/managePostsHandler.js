@@ -2,6 +2,7 @@ import { getPosts } from "../../api/posts/getPosts.js";
 import { displayMessage } from "../../ui/common/displayMessage.js";
 import { createPostElement } from "../../ui/posts/createPostElement.js";
 import { deletePostHandler } from "./deletePostHandler.js";
+import { filterPosts } from "../../handlers/posts/filterPosts.js";
 
 export async function managePostsHandler() {
   const container = document.querySelector("#postsContainer");
@@ -13,6 +14,7 @@ export async function managePostsHandler() {
     if (posts.length > 0) {
       posts.forEach((post) => {
         createPostElement(container, post, deletePostHandler);
+        filterPosts(posts);
       });
     } else {
       displayMessage(container, "warning", "No posts found.");
