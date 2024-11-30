@@ -28,9 +28,7 @@ export async function getPostByIdHandler(id) {
 
 
       <h3><strong>Author:</strong> ${post.data.author?.name || "Unknown"}</h3>
-      <h3><strong>Created:</strong> ${new Date(
-        post.created
-      ).toLocaleString()}</h3>
+      <h3><strong>Created:</strong> ${post.data.created}</h3>
       <h3> <strong>Tags:</strong> ${post.data.tags.join(", ")}</h3>
       <div id="shareButton" class="share-icon" title="Share">
     <i class="fa-solid fa-link"></i>
