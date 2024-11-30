@@ -6,8 +6,8 @@ const postsPerPage = 12;
 export async function displayPaginatedPosts(displayBlogPosts) {
   const postListContainer = document.querySelector(".blog-posts");
   const paginationInfo = document.getElementById("pagination-info");
-  const previousButton = document.querySelector("#prev-btn");
-  const nextButton = document.querySelector("#next-btn");
+  const previousButton = document.querySelector(".pagination-previous");
+  const nextButton = document.querySelector(".pagination-next");
 
   async function renderPosts() {
     try {
