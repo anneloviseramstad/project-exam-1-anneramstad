@@ -126,10 +126,28 @@ a {
   transition: transform 0.3s ease;
 }
 
-
-
-li:hover, a:hover {
+li:hover,
+a:hover {
   transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  li:hover,
+  a:hover {
+    transform: scale(0);
+  }
+  li,
+  a {
+    transition: none;
+  }
+  .h1-secondary {
+    background-color: var(--secondary-color);
+    margin: 0;
+    width: fit-content;
+  }
+  h1 {
+    margin: 0.8em;
+  }
 }
 
 header img,
