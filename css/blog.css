@@ -30,7 +30,11 @@
   transition: all 0.3s ease;
 }
 
-
+.post-id-image {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
 
 .post-card:hover {
   transform: scale(1.05);
