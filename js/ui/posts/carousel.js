@@ -25,7 +25,6 @@ export async function setupCarousel() {
       const currentPost = latestPosts[currentIndex];
 
       carouselLink.href = `/post?id=${currentPost.id}`;
-      console.log(currentPost);
 
       carouselImage.src = currentPost.media?.url || "/default-image.jpg";
       carouselTitle.textContent = currentPost.title || "No title";
