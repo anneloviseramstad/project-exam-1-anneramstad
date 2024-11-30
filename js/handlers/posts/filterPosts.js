@@ -34,6 +34,6 @@ export function filterPosts(posts) {
   } else if (sortByTitle === "z-a") {
     filteredPosts.sort((a, b) => b.title.localeCompare(a.title));
   }
-
+  console.log(filteredPosts);
   return filteredPosts;
 }
