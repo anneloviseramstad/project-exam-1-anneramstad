@@ -20,9 +20,13 @@ export function filterPosts(posts) {
   }
 
   if (sortByDate === "newest") {
-    filteredPosts.sort((a, b) => b.created - a.created);
+    filteredPosts.sort(
+      (a, b) => new Date(b.created).getTime() - new Date(a.created).getTime()
+    );
   } else if (sortByDate === "oldest") {
-    filteredPosts.sort((a, b) => a.created - b.created);
+    filteredPosts.sort(
+      (a, b) => new Date(a.created).getTime() - new Date(b.created).getTime()
+    );
   }
 
   if (sortByTitle === "a-z") {
@@ -31,6 +35,5 @@ export function filterPosts(posts) {
     filteredPosts.sort((a, b) => b.title.localeCompare(a.title));
   }
 
-  console.log(sortByDate);
   return filteredPosts;
 }
