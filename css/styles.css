@@ -141,9 +141,9 @@ a:hover {
     transition: none;
   }
   .h1-secondary {
-    background-color: var(--secondary-color);
+    background-color: #ffffff;
     margin: 0;
-    width: fit-content;
+    width: auto;
   }
   h1 {
     margin: 0.8em;
