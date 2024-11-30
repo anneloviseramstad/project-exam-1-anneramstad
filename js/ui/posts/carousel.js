@@ -13,6 +13,7 @@ export async function setupCarousel() {
       .sort((a, b) => new Date(b.created) - new Date(a.created))
       .slice(0, 3);
 
+    const carouselLink = document.querySelector(".carousel-link");
     const carouselImage = document.querySelector(".carousel-image");
     const carouselTitle = document.getElementById("carouselTitle");
     const scrollLeftBtn = document.querySelector(".btn-left");
@@ -23,7 +24,8 @@ export async function setupCarousel() {
     function updateCarousel() {
       const currentPost = latestPosts[currentIndex];
 
-      carouselLink.href = `/post?id=${currentPost.id}`;
+      carouselLink.href = `/posts/${currentPost.id}`;
+      console.log(currentPost);
 
       carouselImage.src = currentPost.media?.url || "/default-image.jpg";
       carouselTitle.textContent = currentPost.title || "No title";
