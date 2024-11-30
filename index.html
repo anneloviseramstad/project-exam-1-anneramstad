@@ -119,10 +119,29 @@
         <button class="btn-right">&gt;</button>
       </div>
       <div class="filterbox">
-        <input id="search" placeholder="Search..." />
-        <select id="sortByDate">
-          <option value="newest-oldest">Newest to Oldest</option>
-          <option value="oldest-newest">Oldest to Newest</option>
+        <div id="search">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search by title..."
+            aria-label="Search by title"
+          />
+        </div>
+        <select id="sortByDate" aria-label="Sort By Date">
+          <option value="newest">Newest</option>
+          <option value="oldest">Oldest</option>
+        </select>
+        <select id="sortByTitle" aria-label="Sort By Title">
+          <option value="a-z">A-Z</option>
+          <option value="z-a">Z-A</option>
+        </select>
+        <select id="sortByTag" aria-label="Filter By Tag">
+          <option value="all">All</option>
+          <option value="culture">Culture</option>
+          <option value="tradition">Tradition</option>
+          <option value="science">Science</option>
+          <option value="heritage">Heritage</option>
+          <option value="seasonal">Seasonal</option>
         </select>
       </div>
       <div id="postsContainer" class="posts-grid"></div>

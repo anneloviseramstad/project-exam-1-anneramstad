@@ -3,7 +3,6 @@ import { displayMessage } from "../../ui/common/displayMessage.js";
 import { createPostElement } from "../../ui/posts/createPostElement.js";
 import { deletePostHandler } from "./deletePostHandler.js";
 import { filterPosts } from "./filterPosts.js";
-import { filterPostsByDate } from "./filterByDate.js";
 
 export async function managePostsHandler() {
   const container = document.querySelector("#postsContainer");
@@ -12,14 +11,30 @@ export async function managePostsHandler() {
 
   try {
     const posts = await getPosts();
-    console.log("Fetched posts:", posts);
-    if (posts.length > 0) {
-      posts.forEach((post) => {
-        createPostElement(container, post, deletePostHandler);
-      });
 
-      filterPosts(posts);
-      filterPostsByDate(posts);
+    if (posts.length > 0) {
+      function updatePostsDisplay() {
+        const filteredPosts = filterPosts(posts);
+        container.innerHTML = "";
+        filteredPosts.forEach((post) => {
+          createPostElement(container, post, deletePostHandler);
+        });
+      }
+
+      document
+        .getElementById("searchInput")
+        .addEventListener("input", updatePostsDisplay);
+      document
+        .getElementById("sortByDate")
+        .addEventListener("change", updatePostsDisplay);
+      document
+        .getElementById("sortByTitle")
+        .addEventListener("change", updatePostsDisplay);
+      document
+        .getElementById("sortByTag")
+        .addEventListener("change", updatePostsDisplay);
+
+      updatePostsDisplay();
     } else {
       displayMessage(container, "warning", "No posts found.");
     }

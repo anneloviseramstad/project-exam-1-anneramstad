@@ -23,9 +23,7 @@ export function createPostElement(container, post, deletePostHandler) {
   metaInfoContainer.innerHTML = `
     <h3><strong>Tags:</strong> ${post.tags.join(", ")}</h3>
     <h3><strong>Author:</strong> ${post.author?.name || "Unknown"}</h3>
-    <h3><strong>Created:</strong> ${new Date(
-      post.created
-    ).toLocaleString()}</h3>
+    <h3><strong>Created:</strong> ${post.created.toLocaleString()}</h3>
   `;
 
   if (post.media?.url) {

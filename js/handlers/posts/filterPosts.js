@@ -1,24 +1,36 @@
-import { createPostElement } from "../../ui/posts/createPostElement.js";
-
 export function filterPosts(posts) {
-  const searchInput = document.querySelector("#search");
+  const sortByDate = document.getElementById("sortByDate").value;
+  const sortByTitle = document.getElementById("sortByTitle").value;
+  const sortByTag = document.getElementById("sortByTag").value;
+  const searchInput = document
+    .getElementById("searchInput")
+    .value.toLowerCase();
+  let filteredPosts = posts;
 
   if (searchInput) {
-    searchInput.addEventListener("input", handleFilter);
-  }
-
-  function handleFilter(event) {
-    const filterValue = event.target.value.trim().toLowerCase();
-
-    const filteredPosts = posts.filter((post) =>
-      post.title.toLowerCase().startsWith(filterValue)
+    filteredPosts = filteredPosts.filter((post) =>
+      post.title.toLowerCase().includes(searchInput)
     );
-
-    const container = document.querySelector("#postsContainer");
-    container.innerHTML = "";
-
-    filteredPosts.forEach((post) => {
-      createPostElement(container, post);
-    });
   }
+
+  if (sortByTag && sortByTag !== "all") {
+    filteredPosts = filteredPosts.filter(
+      (post) => post.tags && post.tags.includes(sortByTag)
+    );
+  }
+
+  if (sortByDate === "newest") {
+    filteredPosts.sort((a, b) => b.created - a.created);
+  } else if (sortByDate === "oldest") {
+    filteredPosts.sort((a, b) => a.created - b.created);
+  }
+
+  if (sortByTitle === "a-z") {
+    filteredPosts.sort((a, b) => a.title.localeCompare(b.title));
+  } else if (sortByTitle === "z-a") {
+    filteredPosts.sort((a, b) => b.title.localeCompare(a.title));
+  }
+
+  console.log(sortByDate);
+  return filteredPosts;
 }
