@@ -1,32 +1,25 @@
 import { GET_ALL_POSTS } from "../../constants/api.js";
 import { headers } from "../../constants/headers.js";
 
-export async function getPosts(limit = 12, tag, page = 1) {
+export async function getPosts(limit = 12, page = 1, tag) {
   try {
     const params = new URLSearchParams({
       limit: limit.toString(),
       page: page.toString(),
-      ...(tag && { tag }),
+      ...(tag && { tag: tag }),
+      _author: true,
     });
 
     const response = await fetch(`${GET_ALL_POSTS}?${params}`, {
       method: "GET",
       headers: headers(),
     });
-
     if (response.ok) {
       const { data } = await response.json();
-
-      localStorage.setItem("posts", JSON.stringify(data));
-
-      return data;
-    } else {
-      const errorData = await response.json();
-      console.error("Error fetching posts:", errorData.message);
-      throw new Error(errorData.message || "Failed to fetch posts.");
+      const posts = data;
+      return posts;
     }
   } catch (error) {
-    console.error("Error fetching post:", error.message);
-    throw error;
+    console.error("Error fetching posts:", error);
   }
 }

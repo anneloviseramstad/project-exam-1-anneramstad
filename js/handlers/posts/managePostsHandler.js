@@ -12,6 +12,7 @@ export async function managePostsHandler() {
 
   try {
     const posts = await getPosts();
+    console.log("Fetched posts:", posts);
     if (posts.length > 0) {
       posts.forEach((post) => {
         createPostElement(container, post, deletePostHandler);
