@@ -25,7 +25,7 @@ export async function indexPageHandler() {
           createPostElement(container, post);
         });
 
-        const totalPosts = 100;
+        const totalPosts = 20;
         const totalPages = Math.ceil(totalPosts / postsPerPage);
         paginationInfo.textContent = `Page ${currentPage} of ${totalPages}`;
 
@@ -40,6 +40,42 @@ export async function indexPageHandler() {
       displayMessage(container, "error", "Failed to fetch posts.");
     }
   }
+
+  document.getElementById("searchInput").addEventListener("input", () => {
+    console.log(
+      "Search filter updated:",
+      document.getElementById("searchInput").value
+    );
+    currentPage = 1;
+    updatePostsDisplay();
+  });
+
+  document.getElementById("sortByDate").addEventListener("change", () => {
+    console.log(
+      "Date filter updated:",
+      document.getElementById("sortByDate").value
+    );
+    currentPage = 1;
+    updatePostsDisplay();
+  });
+
+  document.getElementById("sortByTitle").addEventListener("change", () => {
+    console.log(
+      "Title filter updated:",
+      document.getElementById("sortByTitle").value
+    );
+    currentPage = 1;
+    updatePostsDisplay();
+  });
+
+  document.getElementById("sortByTag").addEventListener("change", () => {
+    console.log(
+      "Tag filter updated:",
+      document.getElementById("sortByTag").value
+    );
+    currentPage = 1;
+    updatePostsDisplay();
+  });
 
   previousButton.addEventListener("click", () => {
     if (currentPage > 1) {

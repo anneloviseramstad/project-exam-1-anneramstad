@@ -1,4 +1,5 @@
 export function filterPosts(posts) {
+  
   const sortByDate = document.getElementById("sortByDate").value;
   const sortByTitle = document.getElementById("sortByTitle").value;
   const sortByTag = document.getElementById("sortByTag").value;
