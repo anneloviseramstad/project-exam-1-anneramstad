@@ -3,6 +3,7 @@ import { initLogin } from "./ui/auth/login.js";
 import { loginStatusAndNavStatus } from "./ui/common/navbar.js";
 import { initCreatePost } from "./ui/posts/initCreatePost.js";
 import { managePostsHandler } from "./handlers/posts/managePostsHandler.js";
+import { indexPageHandler } from "./handlers/posts/indexPageHandler.js";
 import { getPostByIdHandler } from "./handlers/posts/getPostById.js";
 import { initEditPost } from "./ui/posts/initEditPost.js";
 import { setupCarousel } from "./ui/posts/carousel.js";
@@ -25,7 +26,7 @@ function router() {
 
   switch (pathname) {
     case "/":
-      managePostsHandler();
+      indexPageHandler();
       setupCarousel();
       break;
     case "/home":
