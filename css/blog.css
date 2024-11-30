@@ -27,10 +27,13 @@
 .post-card {
   background-color: #ffffff9f;
   border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
-.post-card a img {
-  border-radius: 4px 4px 0 0;
+
+
+.post-card:hover {
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
@@ -100,7 +103,8 @@
 }
 
 .read-more-btn:hover {
-  background-color: #0056b3;
+  background-color: #8e4b2f;
+  color: #ffffff;
 }
 
 .post-buttons button {

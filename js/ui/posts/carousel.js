@@ -3,7 +3,6 @@ import { getPosts } from "../../api/posts/getPosts.js";
 export async function setupCarousel() {
   try {
     const posts = await getPosts();
-    
 
     if (!posts || posts.length === 0) {
       console.error("No posts found");
@@ -23,6 +22,9 @@ export async function setupCarousel() {
 
     function updateCarousel() {
       const currentPost = latestPosts[currentIndex];
+
+      carouselLink.href = `/post?id=${currentPost.id}`;
+
       carouselImage.src = currentPost.media?.url || "/default-image.jpg";
       carouselTitle.textContent = currentPost.title || "No title";
     }
