@@ -60,4 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // References:
 
+// https://jessywlee.medium.com/apply-http-post-method-and-fetch-function-to-user-login-js-react-d74a2c19ab7d
 
+// https://www.w3schools.com/js/default.asp
+
+// https://mollify.noroff.dev/content/feu1/javascript-1?nav=
+
+// https://github.com/cnnrbrn/js2-code-arrangement

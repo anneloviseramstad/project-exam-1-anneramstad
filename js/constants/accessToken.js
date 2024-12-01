@@ -36,6 +36,5 @@ export function logOut() {
 
 export function loginStatus() {
   const username = localStorage.getItem("username");
-  console.log(username);
   return username;
 }
