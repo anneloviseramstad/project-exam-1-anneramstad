@@ -14,8 +14,7 @@ function router() {
   const searchParams = new URLSearchParams(window.location.search);
   const postId = searchParams.get("id");
 
-  const pathParts = fullPath.split("/").slice(2).join("/");
-  const pathname = `/${pathParts}`;
+  const pathname = fullPath;
 
   loginStatusAndNavStatus();
 
