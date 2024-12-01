@@ -67,3 +67,5 @@ document.addEventListener("DOMContentLoaded", () => {
 // https://mollify.noroff.dev/content/feu1/javascript-1?nav=
 
 // https://github.com/cnnrbrn/js2-code-arrangement
+
+// https://color-muse-blog-project-exam-1.netlify.app/
