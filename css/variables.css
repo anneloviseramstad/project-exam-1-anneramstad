@@ -1,0 +1,27 @@
+:root {
+  /* Color Variables */
+  --primary-color: #727c62;
+  --secondary-color: #d9dcd6;
+  --tetriary-color: #ba623c;
+  --button-color: #9fa786;
+  --text-color-primary: #1f1f1f;
+  --text-color-secondary: #ffffff;
+  --text-color-tetriary: #000000;
+
+  /* Font Variables */
+  --font-family: "Roboto Serif", sans-serif;
+  --font-family-secondary: "Poppins", sans-serif;
+  --logo-font-family: "Abril Fatface", sans-serif;
+  --base-font-size: 1em;
+
+  /* Spacing Variables */
+  --section-margin: 2em;
+  --section-margin-mobile: 1em;
+
+  /* Breakpoint Variables */
+  --breakpoint-small: 640px;
+  --breakpoint-medium: 768px;
+  --breakpoint-large: 1024px;
+  --breakpoint-xlarge: 1280px;
+  --breakpoint-xxlarge: 1536px;
+}

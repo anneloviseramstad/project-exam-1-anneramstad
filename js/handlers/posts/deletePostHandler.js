@@ -1,5 +1,17 @@
 import { deletePost } from "../../api/posts/deletePost.js";
 
+/**
+ * Handles the deletion of a blog post.
+ *
+ * @param {Event} event - The click event on the delete button.
+ *
+ * - Retrieves the post ID from the event target.
+ * - Prompts the user with a confirmation dialog before deleting.
+ * - Calls `deletePost` to delete the post.
+ * - On success, shows an alert, removes the post from the DOM, and updates the UI.
+ * - On failure, logs the error and shows an alert with the error message.
+ */
+
 export async function deletePostHandler(event) {
   const postId = event.target.dataset.postId;
 

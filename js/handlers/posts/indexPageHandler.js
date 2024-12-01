@@ -3,6 +3,15 @@ import { displayMessage } from "../../ui/common/displayMessage.js";
 import { createPostElement } from "../../ui/posts/createPostElement.js";
 import { filterPosts } from "./filterPosts.js";
 
+/**
+ * Handles the logic for displaying and paginating posts on the index page.
+ *
+ * - Fetches posts and updates the display based on pagination and filters.
+ * - Allows sorting by date, title, and tag, as well as searching posts.
+ * - Updates pagination info and enables/disables pagination buttons.
+ * - Displays a message if no posts are found or if there is an error.
+ */
+
 export async function indexPageHandler() {
   const container = document.querySelector("#postsContainer");
   const paginationInfo = document.getElementById("pagination-info");
@@ -14,12 +23,14 @@ export async function indexPageHandler() {
 
   let isInitialLoad = true;
 
+  // Updates the display of posts based on current page and filters.
   async function updatePostsDisplay() {
     try {
       const posts = await getPosts(postsPerPage, currentPage);
 
       let postsToDisplay = posts;
 
+      // Initial load sorts posts by date
       if (isInitialLoad) {
         postsToDisplay.sort(
           (a, b) =>
@@ -33,12 +44,12 @@ export async function indexPageHandler() {
       if (postsToDisplay.length > 0) {
         container.innerHTML = "";
         postsToDisplay.forEach((post) => {
-          createPostElement(container, post);
+          createPostElement(container, post); // Create post elements dynamically
         });
 
         const totalPosts = 20;
         const totalPages = Math.ceil(totalPosts / postsPerPage);
-        paginationInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+        paginationInfo.textContent = `Page ${currentPage} of ${totalPages}`; // For pagination, update based on real data
 
         previousButton.disabled = currentPage === 1;
         nextButton.disabled = currentPage === totalPages;
@@ -51,6 +62,8 @@ export async function indexPageHandler() {
       displayMessage(container, "error", "Failed to fetch posts.");
     }
   }
+
+  // Event listeners for filters and search input
 
   document.getElementById("searchInput").addEventListener("input", () => {
     console.log(
@@ -88,6 +101,8 @@ export async function indexPageHandler() {
     updatePostsDisplay();
   });
 
+  // Pagination buttons
+
   previousButton.addEventListener("click", () => {
     if (currentPage > 1) {
       currentPage--;
@@ -100,5 +115,5 @@ export async function indexPageHandler() {
     updatePostsDisplay();
   });
 
-  updatePostsDisplay();
+  updatePostsDisplay(); // Initial load of posts
 }

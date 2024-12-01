@@ -37,6 +37,8 @@
   object-fit: cover;
 }
 
+/* Media Queries for main content */
+
 @media (max-width: 1024px) {
   .main-about,
   .main-presentation,

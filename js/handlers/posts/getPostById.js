@@ -1,6 +1,16 @@
 import { getPostById } from "../../api/posts/getPostById.js";
 import { displayMessage } from "../../ui/common/displayMessage.js";
 
+/**
+ * Fetches and displays the details of a specific post by its ID.
+ *
+ * @param {string} id - The ID of the post to fetch.
+ *
+ * - Redirects to the post management page if no ID is provided.
+ * - Displays the post details (title, image, body, author, creation date, and tags).
+ * - Shows an error message if the post is not found or there is an error fetching it.
+ */
+
 export async function getPostByIdHandler(id) {
   if (!id) {
     window.location.href = "/post/manage";
@@ -48,6 +58,12 @@ export async function getPostByIdHandler(id) {
     );
   }
 }
+
+/**
+ * Copies the shareable URL of the current post to the clipboard.
+ *
+ * @param {string} postId - The ID of the post to generate the URL for.
+ */
 
 function copyShareableUrl(postId) {
   const currentUrl = window.location.href.split("?")[0];

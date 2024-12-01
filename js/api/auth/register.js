@@ -2,6 +2,21 @@ import { API_REGISTER_ENDPOINT } from "../../constants/api.js";
 import { headers } from "../../constants/headers.js";
 import { displayMessage } from "../../ui/common/displayMessage.js";
 
+/**
+ * Registers a new user by sending their details to the API register endpoint.
+ *
+ * @param {string} name - The user's name.
+ * @param {string} email - The user's email address.
+ * @param {string} password - The user's password.
+ *
+ * @returns {void}
+ *
+ * - Validates the input fields for completeness, email format, and password length.
+ * - Alerts the user if validation fails or registration is unsuccessful.
+ * - Redirects to the login page if registration succeeds.
+ * @throws {Error} Logs an error to the console if an unexpected error occurs.
+ */
+
 export async function registerUser({ name, email, password }) {
   const url = `${API_REGISTER_ENDPOINT}`;
   const body = {
@@ -11,17 +26,17 @@ export async function registerUser({ name, email, password }) {
   };
 
   if (!name || !email || !password) {
-    alert("Please fill out all fields.");
+    displayMessage("Please fill out all fields.");
     return;
   }
 
   if (!/^\S+@\S+\.\S+$/.test(email)) {
-    alert("Please enter a valid email address.");
+    displayMessage("Please enter a valid email address.");
     return;
   }
 
   if (password.length < 8) {
-    alert("Password must be at least 8 characters long.");
+    displayMessage("Password must be at least 8 characters long.");
     return;
   }
 
@@ -36,9 +51,11 @@ export async function registerUser({ name, email, password }) {
 
     if (!response.ok) {
       if (data.errors && data.errors.length > 0) {
-        alert(`Registration failed: ${data.errors[0].message}`);
+        displayMessage(`Registration failed: ${data.errors[0].message}`);
       } else {
-        alert(`Registration failed: ${data.message || "Unknown error"}`);
+        displayMessage(
+          `Registration failed: ${data.message || "Unknown error"}`
+        );
       }
       return;
     }

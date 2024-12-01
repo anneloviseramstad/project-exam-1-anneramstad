@@ -3,6 +3,15 @@ import { displayMessage } from "../../ui/common/displayMessage.js";
 import { createPostElement } from "../../ui/posts/createPostElement.js";
 import { deletePostHandler } from "./deletePostHandler.js";
 
+/**
+ * Handles the logic for managing and displaying posts on the admin/manage posts page.
+ *
+ * - Fetches all posts and displays them using `createPostElement`.
+ * - Displays a warning message if no posts are found.
+ * - If there's an error fetching posts, it shows an error message.
+ * - Each post can be deleted via the `deletePostHandler` function passed to the post element.
+ */
+
 export async function managePostsHandler() {
   const container = document.querySelector("#postsContainer");
 

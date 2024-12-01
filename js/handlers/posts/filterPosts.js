@@ -1,3 +1,15 @@
+/**
+ * Filters and sorts a list of blog posts based on user inputs.
+ *
+ * @param {Array} posts - An array of blog post objects to be filtered.
+ * @returns {Array} - The filtered and sorted array of blog posts.
+ *
+ * - Filters posts based on the search input (title search).
+ * - Filters posts by selected tag (if any).
+ * - Sorts posts by creation date (newest or oldest).
+ * - Sorts posts by title (A-Z or Z-A).
+ */
+
 export function filterPosts(posts) {
   const sortByDate = document.getElementById("sortByDate").value;
   const sortByTitle = document.getElementById("sortByTitle").value;

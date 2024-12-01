@@ -4,6 +4,13 @@ import {
   logOut,
 } from "../../constants/accessToken.js";
 
+/**
+ * Updates the navigation elements based on the user's login status.
+ * - Displays the user's greeting and logout button if logged in.
+ * - Hides the login and register links if logged in.
+ * - Shows the login and register links if not logged in.
+ */
+
 export function updateNav() {
   const userGreeting = document.querySelector(".user-greeting");
   const logoutButton = document.querySelector(".logout-button");
