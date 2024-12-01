@@ -41,6 +41,7 @@ function router() {
     case "/manage":
       managePostsHandler();
       setupCarousel();
+      loginStatusAndNavStatus();
       break;
     case "/createpost":
       initCreatePost();
