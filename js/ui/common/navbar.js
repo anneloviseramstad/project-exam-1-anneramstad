@@ -20,6 +20,9 @@ export function updateNav() {
   const username = loginStatus();
   const loggedIn = isUserLoggedIn();
 
+  console.log(loggedIn);
+  console.log(username);
+
   if (loggedIn) {
     if (userGreeting) {
       userGreeting.style.display = "block";
