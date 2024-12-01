@@ -23,7 +23,7 @@ export async function getPostByIdHandler(id) {
       post.media?.alt || "Post image"
     }" />
    
-   <div>${post.data.body}</div>
+   <div class="post-body">${post.data.body}</div>
 
 
 
