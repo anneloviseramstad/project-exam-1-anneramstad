@@ -20,15 +20,12 @@ export function updateNav() {
   const username = loginStatus();
   const loggedIn = isUserLoggedIn();
 
-  console.log(loggedIn);
-  console.log(username);
-
   if (loggedIn) {
     if (userGreeting) {
       userGreeting.style.display = "block";
       const usernameSpan = userGreeting.querySelector("#username");
       if (usernameSpan) {
-        usernameSpan.textContent = username || "User";
+        userGreeting.textContent = `Hello, ${username || "User"}`;
       }
     }
     if (logoutButton) {
