@@ -12,8 +12,8 @@ export function createPostElement(container, post, deletePostHandler) {
   const heading = document.createElement("h2");
   heading.textContent = post.title;
 
-  const content = document.createElement("p");
-  content.textContent = post.body;
+  const content = document.createElement("div");
+  content.innerHTML = post.body;
 
   const readMoreButton = document.createElement("button");
   readMoreButton.textContent = "Read more..";
