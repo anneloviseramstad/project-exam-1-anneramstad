@@ -7,7 +7,6 @@ import { indexPageHandler } from "./handlers/posts/indexPageHandler.js";
 import { getPostByIdHandler } from "./handlers/posts/getPostById.js";
 import { initEditPost } from "./ui/posts/initEditPost.js";
 import { setupCarousel } from "./ui/posts/carousel.js";
-import { updateNav } from "./ui/common/navbar.js";
 
 function router() {
   const fullPath = window.location.pathname;
@@ -31,13 +30,11 @@ function router() {
       setupCarousel();
       break;
     case "/home":
-      updateNav();
       break;
     case "/login":
       initLogin();
       break;
     case "/about":
-      updateNav();
       break;
     case "/post":
       break;
