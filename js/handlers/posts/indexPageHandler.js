@@ -12,16 +12,27 @@ export async function indexPageHandler() {
   let currentPage = 1;
   const postsPerPage = 12;
 
+  let isInitialLoad = true;
+
   async function updatePostsDisplay() {
     try {
       const posts = await getPosts(postsPerPage, currentPage);
 
-      if (posts.length > 0) {
-        const filteredPosts = filterPosts(posts);
+      let postsToDisplay = posts;
 
+      if (isInitialLoad) {
+        postsToDisplay.sort(
+          (a, b) =>
+            new Date(b.created).getTime() - new Date(a.created).getTime()
+        );
+        isInitialLoad = false;
+      } else {
+        postsToDisplay = filterPosts(posts);
+      }
+
+      if (postsToDisplay.length > 0) {
         container.innerHTML = "";
-
-        filteredPosts.forEach((post) => {
+        postsToDisplay.forEach((post) => {
           createPostElement(container, post);
         });
 
