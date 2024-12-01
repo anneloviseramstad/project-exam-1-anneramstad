@@ -1,5 +1,4 @@
 export function filterPosts(posts) {
-  
   const sortByDate = document.getElementById("sortByDate").value;
   const sortByTitle = document.getElementById("sortByTitle").value;
   const sortByTag = document.getElementById("sortByTag").value;
@@ -35,6 +34,6 @@ export function filterPosts(posts) {
   } else if (sortByTitle === "z-a") {
     filteredPosts.sort((a, b) => b.title.localeCompare(a.title));
   }
-  console.log(filteredPosts);
+
   return filteredPosts;
 }
