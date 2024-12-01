@@ -61,7 +61,7 @@ export async function registerUser({ name, email, password }) {
     }
 
     alert("Registration successful!");
-    //window.location.href = "/account/login";
+    window.location.href = "/account/login";
   } catch (error) {
     console.error("Registration failed:", error);
     alert("An error occurred while registering. Please try again.");
